@@ -1,0 +1,111 @@
+export type ColorStep = { step: string; hex: string };
+export type ColorScale = { name: string; description: string; steps: ColorStep[] };
+
+export const colorScales: ColorScale[] = [
+  {
+    name: "Primary",
+    description: "Color principal de marca. Úsalo para acciones primarias y elementos de mayor jerarquía.",
+    steps: [
+      { step: "00", hex: "#f3f4f9" },
+      { step: "01", hex: "#e4e5f4" },
+      { step: "02", hex: "#c9ccee" },
+      { step: "03", hex: "#9ba0e4" },
+      { step: "04", hex: "#646cd8" },
+      { step: "05", hex: "#333dcc" },
+      { step: "06", hex: "#2a32a2" },
+      { step: "07", hex: "#23297b" },
+      { step: "08", hex: "#1c2057" },
+      { step: "09", hex: "#121433" },
+    ],
+  },
+  {
+    name: "Neutral",
+    description: "Escala de grises para texto, fondos y bordes.",
+    steps: [
+      { step: "white", hex: "#ffffff" },
+      { step: "00", hex: "#f6f6f7" },
+      { step: "01", hex: "#ebebed" },
+      { step: "02", hex: "#d8d9de" },
+      { step: "03", hex: "#b9bac5" },
+      { step: "04", hex: "#9496a8" },
+      { step: "05", hex: "#73748c" },
+      { step: "06", hex: "#5c5d70" },
+      { step: "07", hex: "#484956" },
+      { step: "08", hex: "#34353e" },
+      { step: "09", hex: "#202025" },
+    ],
+  },
+  {
+    name: "Info",
+    description: "Estados informativos: mensajes neutrales o de ayuda al usuario.",
+    steps: [
+      { step: "00", hex: "#f3f6fa" },
+      { step: "01", hex: "#e2ebf6" },
+      { step: "02", hex: "#c5d8f1" },
+      { step: "03", hex: "#94b9eb" },
+      { step: "04", hex: "#5895e4" },
+      { step: "05", hex: "#2473db" },
+      { step: "06", hex: "#1e5cae" },
+      { step: "07", hex: "#1b4883" },
+      { step: "08", hex: "#16355c" },
+      { step: "09", hex: "#0f2036" },
+    ],
+  },
+  {
+    name: "Success",
+    description: "Estados de éxito: confirmaciones y trámites completados.",
+    steps: [
+      { step: "00", hex: "#f3f9f5" },
+      { step: "01", hex: "#e4f4e8" },
+      { step: "02", hex: "#c8eed3" },
+      { step: "03", hex: "#9ae5af" },
+      { step: "04", hex: "#62da84" },
+      { step: "05", hex: "#30cf5d" },
+      { step: "06", hex: "#28a44b" },
+      { step: "07", hex: "#227c3c" },
+      { step: "08", hex: "#1b582c" },
+      { step: "09", hex: "#12331b" },
+    ],
+  },
+  {
+    name: "Warning",
+    description: "Estados de advertencia: información que requiere atención del usuario.",
+    steps: [
+      { step: "00", hex: "#faf7f2" },
+      { step: "01", hex: "#f7efe0" },
+      { step: "02", hex: "#f5e2c2" },
+      { step: "03", hex: "#f3cd8c" },
+      { step: "04", hex: "#f0b44c" },
+      { step: "05", hex: "#ec9c13" },
+      { step: "06", hex: "#bb7d11" },
+      { step: "07", hex: "#8d6011" },
+      { step: "08", hex: "#634410" },
+      { step: "09", hex: "#39290c" },
+    ],
+  },
+  {
+    name: "Error",
+    description: "Estados de error: fallas, campos inválidos y trámites rechazados.",
+    steps: [
+      { step: "00", hex: "#faf2f3" },
+      { step: "01", hex: "#f6e1e2" },
+      { step: "02", hex: "#f3c4c5" },
+      { step: "03", hex: "#ee9093" },
+      { step: "04", hex: "#ea5358" },
+      { step: "05", hex: "#e31c23" },
+      { step: "06", hex: "#b4181d" },
+      { step: "07", hex: "#88161a" },
+      { step: "08", hex: "#5f1316" },
+      { step: "09", hex: "#370d0f" },
+    ],
+  },
+];
+
+export const brandColors: ColorStep[] = [
+  { step: "Navy", hex: "#1a1f6b" },
+  { step: "Teal", hex: "#2ba0a0" },
+  { step: "Green", hex: "#4ad16f" },
+  { step: "White", hex: "#ffffff" },
+  { step: "Off-White", hex: "#f6f7fb" },
+];
+
