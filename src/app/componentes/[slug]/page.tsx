@@ -56,6 +56,7 @@ export default async function ComponenteCategoryPage(props: PageProps<"/componen
         <PageHeader
           eyebrow="Componentes"
           eyebrowHref="/componentes"
+          docPath={`/componentes/${slug}`}
           title="Botones"
           description={buttonDefinition}
           action={<FigmaLink nodeId={botones.figmaNodeId} />}
@@ -328,6 +329,7 @@ export default async function ComponenteCategoryPage(props: PageProps<"/componen
         component={findComponent(group[0])}
         eyebrow="Componentes"
         eyebrowHref="/componentes"
+        docPath={`/componentes/${slug}`}
       />
     );
   }
@@ -335,7 +337,12 @@ export default async function ComponenteCategoryPage(props: PageProps<"/componen
   if (group && group.length > 1) {
     return (
       <div>
-        <PageHeader eyebrow="Componentes" eyebrowHref="/componentes" title={item.label} />
+        <PageHeader
+          eyebrow="Componentes"
+          eyebrowHref="/componentes"
+          docPath={`/componentes/${slug}`}
+          title={item.label}
+        />
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {group.map((componentSlug) => {
             const component = findComponent(componentSlug);
@@ -355,7 +362,12 @@ export default async function ComponenteCategoryPage(props: PageProps<"/componen
 
   return (
     <div>
-      <PageHeader eyebrow="Componentes" eyebrowHref="/componentes" title={item.label} />
+      <PageHeader
+        eyebrow="Componentes"
+        eyebrowHref="/componentes"
+        docPath={`/componentes/${slug}`}
+        title={item.label}
+      />
       <ContentCard>
         <PendingNotice>
           Cuéntame qué variantes, estados y reglas de uso debe incluir {item.label} y lo

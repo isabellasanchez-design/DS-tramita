@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "versions": "node --no-warnings --experimental-strip-types scripts/versions.mjs",
+    "predev": "npm run versions",
     "dev": "next dev",
+    "prebuild": "npm run versions",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
