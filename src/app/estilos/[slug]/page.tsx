@@ -10,6 +10,9 @@ import { colorScales, brandColors } from "@/data/colors";
 import { headings, body, bodyUsage } from "@/data/typography";
 import { figmaPages } from "@/data/figma";
 import { getCategory } from "@/data/nav";
+import { SpacingLayoutDiagram } from "@/components/SpacingLayoutDiagram";
+import { DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { spacingDefinition, spacingLayouts, spacingRules, spacingScale } from "@/data/spacing";
 
 const category = getCategory("estilos");
 
@@ -34,6 +37,7 @@ export default async function EstiloDetailPage(props: PageProps<"/estilos/[slug]
         <PageHeader
           eyebrow="Estilos"
           eyebrowHref="/estilos"
+          docPath={`/estilos/${slug}`}
           title="Colores"
           description="Cada escala va de 00 (más claro) a 09 (más oscuro). Úsalas de forma consistente: los tonos 00–02 funcionan como fondos, 04–06 como color de acción, y 07–09 como texto sobre fondos claros."
           action={<FigmaLink nodeId={figmaPages.color} />}
@@ -70,6 +74,7 @@ export default async function EstiloDetailPage(props: PageProps<"/estilos/[slug]
         <PageHeader
           eyebrow="Estilos"
           eyebrowHref="/estilos"
+          docPath={`/estilos/${slug}`}
           title="Tipografía"
           description="Sora se usa para títulos y encabezados; Roboto para texto de cuerpo e interfaz."
           action={<FigmaLink nodeId={figmaPages.typography} />}
@@ -133,17 +138,54 @@ export default async function EstiloDetailPage(props: PageProps<"/estilos/[slug]
         <PageHeader
           eyebrow="Estilos"
           eyebrowHref="/estilos"
+          docPath={`/estilos/${slug}`}
           title="Espaciado"
-          description="La página de Figma documenta los márgenes y separaciones internas (padding) sobre pantallas reales, comparando el contenedor con sus elementos hijos."
+          description={spacingDefinition}
           action={<FigmaLink nodeId={figmaPages.margin} />}
         />
         <ContentCard>
-          <PendingNotice>
-            Por ahora los márgenes están documentados como ejemplos anotados sobre pantallas
-            (padding superior/inferior/izquierdo/derecho y separación entre elementos), no como
-            una escala de tokens (ej. 4 / 8 / 16 / 24px). Confírmame los valores en píxeles que
-            uses como base y los agrego aquí como escala reutilizable.
-          </PendingNotice>
+          <DocSection
+            title="Layout de pantalla"
+            description="Pantalla de 1440 × 1024. El área de contenido llena el espacio que deja el sidebar y mantiene los mismos márgenes con el sidebar expandido o colapsado."
+          >
+            <div className="grid grid-cols-1 gap-6 rounded-xl bg-zinc-50 p-6 xl:grid-cols-2">
+              {spacingLayouts.map((layout) => (
+                <figure key={layout.name} className="flex flex-col items-center gap-3">
+                  <SpacingLayoutDiagram sidebar={layout.sidebar} content={layout.content} />
+                  <figcaption className="text-sm text-zinc-600">
+                    {layout.name}: sidebar de {layout.sidebar}px · contenido de {layout.content}px
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+            <p className="mt-3 text-sm text-zinc-600">
+              <span className="font-semibold text-[#007d00]">Verde</span>: padding.{" "}
+              <span className="font-semibold text-[#c54600]">Naranja</span>: separación entre
+              bloques.
+            </p>
+          </DocSection>
+
+          <DocSection title="Márgenes por contenedor" description="Valores de auto layout tomados de Figma.">
+            <SpecsBlock groups={spacingRules} />
+          </DocSection>
+
+          <DocSection
+            title="Valores en uso"
+            className=""
+            description="Espaciados que aparecen en las pantallas y componentes de Figma. Úsalos como escala de referencia."
+          >
+            <InfoTable
+              columns={["Valor", "Variable en Figma", "Dónde se usa"]}
+              rows={spacingScale.map((step) => [
+                <span key="v" className="flex items-center gap-3">
+                  <span className="inline-block h-3 rounded-sm bg-[var(--brand-primary)]" style={{ width: step.value }} />
+                  {step.value}px
+                </span>,
+                step.token,
+                step.use,
+              ])}
+            />
+          </DocSection>
         </ContentCard>
       </div>
     );
@@ -155,6 +197,7 @@ export default async function EstiloDetailPage(props: PageProps<"/estilos/[slug]
         <PageHeader
           eyebrow="Estilos"
           eyebrowHref="/estilos"
+          docPath={`/estilos/${slug}`}
           title="Iconografía"
           description="Librería de iconografía Phosphor Icons usada dentro de los componentes: navegación, estados, acciones y objetos del dominio de trámites."
           action={<FigmaLink nodeId={figmaPages.icons} />}
@@ -168,7 +211,12 @@ export default async function EstiloDetailPage(props: PageProps<"/estilos/[slug]
 
   return (
     <div>
-      <PageHeader eyebrow="Estilos" eyebrowHref="/estilos" title={item.label} />
+      <PageHeader
+        eyebrow="Estilos"
+        eyebrowHref="/estilos"
+        docPath={`/estilos/${slug}`}
+        title={item.label}
+      />
       <ContentCard>
         <PendingNotice>
           Cuéntame qué debe incluir la sección de {item.label.toLowerCase()} (valores, ejemplos,
