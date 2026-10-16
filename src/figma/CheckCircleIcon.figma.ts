@@ -16,7 +16,7 @@ const weight = instance.getEnum('Weight', {
 
 export default {
   example: figma.code`<CheckCircleIcon weight="${weight}" />`,
-  imports: ['import { CheckCircleIcon } from "@phosphor-icons/react"'],
+  imports: ['import { CheckCircleIcon } from "@phosphor-icons/react/dist/ssr"'],
   id: 'check-circle-icon',
   metadata: { nestable: true },
 }

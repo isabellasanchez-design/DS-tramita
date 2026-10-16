@@ -16,7 +16,7 @@ const weight = instance.getEnum('Weight', {
 
 export default {
   example: figma.code`<CloverIcon weight="${weight}" />`,
-  imports: ['import { CloverIcon } from "@phosphor-icons/react"'],
+  imports: ['import { CloverIcon } from "@phosphor-icons/react/dist/ssr"'],
   id: 'clover-icon',
   metadata: { nestable: true },
 }

@@ -16,7 +16,7 @@ const weight = instance.getEnum('Weight', {
 
 export default {
   example: figma.code`<XIcon weight="${weight}" />`,
-  imports: ['import { XIcon } from "@phosphor-icons/react"'],
+  imports: ['import { XIcon } from "@phosphor-icons/react/dist/ssr"'],
   id: 'x-icon',
   metadata: { nestable: true },
 }
