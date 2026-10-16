@@ -19,9 +19,12 @@ const disabled = instance.getEnum('States', {
   'Disabled': true,
 })
 const showIcon = instance.getBoolean('Show icon')
+// El Chip no tiene propiedad de swap para el ícono; se busca cualquier ícono
+// conectado (src/figma/icons/) en vez de la capa "Clover", que cambia de
+// nombre si alguien hace swap del ícono.
 let iconCode
 if (showIcon) {
-  const icon = instance.findInstance('Clover')
+  const [icon] = instance.findConnectedInstances((node) => /-icon(-\d+)?$/.test(node.codeConnectId() ?? ''))
   if (icon && icon.type === 'INSTANCE') {
     iconCode = icon.executeTemplate().example
   }
