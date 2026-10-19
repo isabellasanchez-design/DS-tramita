@@ -76,7 +76,9 @@ export const components: ComponentDoc[] = [
     name: "Textbox",
     summary: "Campo de texto para capturar información escrita por el usuario.",
     figmaNodeId: "33:399",
-    detailed: false,
+    variantAxes: [{ name: "use-case", values: ["Text field", "Date", "Password", "Dropdown"] }],
+    states: ["Default", "Active", "Filled", "Error", "Success", "Disabled"],
+    detailed: true,
   },
   {
     slug: "alert-toast",

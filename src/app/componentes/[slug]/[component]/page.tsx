@@ -5,6 +5,7 @@ import { RadioDoc } from "@/components/RadioDoc";
 import { SwitchDoc } from "@/components/SwitchDoc";
 import { ChipsDoc } from "@/components/ChipsDoc";
 import { TagsDoc } from "@/components/TagsDoc";
+import { TextboxDoc } from "@/components/TextboxDoc";
 
 // Componentes con documentación completa; el resto usa ComponentDetail.
 const detailedDocs = {
@@ -13,6 +14,7 @@ const detailedDocs = {
   switch: SwitchDoc,
   chips: ChipsDoc,
   tags: TagsDoc,
+  textbox: TextboxDoc,
 } as const;
 import { components, componentGroups } from "@/data/components";
 import { getCategory } from "@/data/nav";

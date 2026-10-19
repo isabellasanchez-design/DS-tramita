@@ -30,5 +30,13 @@ export const docSources: Record<string, string[]> = {
   "/componentes/inputs/switch": ["src/data/switch.ts", "src/components/Switch", "src/components/ui/Switch.tsx"],
   "/componentes/badges/chips": ["src/data/chips.ts", "src/components/Chip", "src/components/ui/Chip.tsx"],
   "/componentes/badges/tags": ["src/data/tags.ts", "src/components/TagsDoc.tsx", "src/components/ui/Tag.tsx"],
+  "/componentes/inputs/textbox": [
+    "src/data/textbox.ts",
+    "src/components/Textbox",
+    "src/components/ui/Field.tsx",
+    "src/components/ui/Input.tsx",
+    "src/components/ui/Select.tsx",
+    "src/figma/Input.figma.ts",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };
