@@ -19,10 +19,11 @@ export type FieldProps = {
   status?: FieldStatus;
 };
 
-// Colores de Figma (02_Input). El borde y el placeholder usan #73748c en vez de
-// #e4e5f4 y #9496a8, que no cumplen el contraste de WCAG 1.4.11 y 1.4.3.
+// Colores de Figma (02_Input), tal cual. Ojo: el borde Default (#e4e5f4) y el
+// placeholder (#9496a8) no cumplen el contraste de WCAG 1.4.11 y 1.4.3; se
+// corrigen cuando cambien en Figma, como una versión nueva.
 const statusBox: Record<FieldStatus | "default", string> = {
-  default: "border-[#73748c]",
+  default: "border-[#e4e5f4]",
   error: "border-[#b4181d]",
   success: "border-[#28a44b]",
 };
@@ -36,7 +37,7 @@ export function fieldBoxClasses(status: FieldStatus | undefined) {
 
 /** Clases del control nativo dentro de la caja. */
 export const fieldControlClasses =
-  "min-w-0 flex-1 bg-transparent px-1 text-base text-[#202025] outline-none placeholder:text-[#73748c] focus-visible:text-[#2a32a2] disabled:cursor-not-allowed disabled:text-[#484956]";
+  "min-w-0 flex-1 bg-transparent px-1 text-base text-[#202025] outline-none placeholder:text-[#9496a8] focus-visible:text-[#2a32a2] disabled:cursor-not-allowed disabled:text-[#484956]";
 
 /** Ícono dentro de la caja: 24px en móvil y 16px desde sm, como en Figma. */
 export function FieldIcon({ children, className = "" }: { children: ReactNode; className?: string }) {

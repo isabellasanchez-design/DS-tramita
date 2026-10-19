@@ -61,7 +61,7 @@ export function Select({
           aria-invalid={status === "error" || undefined}
           aria-describedby={describedBy(selectId, { message, messageEnd, hint })}
           // pr-8 deja espacio al caret; la opción vacía se ve como placeholder.
-          className={`${fieldControlClasses} h-full cursor-pointer appearance-none pr-8 invalid:text-[#73748c] [&:has(option[value='']:checked)]:text-[#73748c]`}
+          className={`${fieldControlClasses} h-full cursor-pointer appearance-none pr-8 invalid:text-[#9496a8] [&:has(option[value='']:checked)]:text-[#9496a8]`}
         >
           {placeholder !== undefined ? (
             <option value="" disabled={selectProps.required}>

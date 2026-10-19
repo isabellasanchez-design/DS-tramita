@@ -63,9 +63,9 @@ export const textboxSpecs: SpecGroup[] = [
       { name: "Padding", value: "8px" },
       { name: "Espacio entre elementos", value: "6px" },
       { name: "Radio", value: "4px" },
-      { name: "Borde", value: "1px #73748c" },
+      { name: "Borde", value: "1px #e4e5f4" },
       { name: "Texto", value: "Roboto Regular 16px · #202025" },
-      { name: "Placeholder", value: "#73748c" },
+      { name: "Placeholder", value: "#9496a8" },
     ],
   },
   {
@@ -84,7 +84,7 @@ export const textboxSpecs: SpecGroup[] = [
 ];
 
 export const textboxContrastNote =
-  "En Figma el borde Default es #e4e5f4 (1,25:1) y el placeholder #9496a8 (2,92:1); no cumplen WCAG 1.4.11 y 1.4.3. En código ambos usan #73748c (4,56:1). Pendiente actualizar Figma.";
+  "Accesibilidad pendiente: el borde Default (#e4e5f4, 1,25:1) y el placeholder (#9496a8, 2,92:1) no cumplen WCAG 1.4.11 y 1.4.3. Un gris como #73748c (4,56:1) cumple ambos. Se corrige primero en Figma y luego en código, como una versión nueva.";
 
 export const textboxBestPractices: string[] = [
   "El label siempre visible encima del campo. El placeholder es un ejemplo del formato, nunca reemplaza al label.",
