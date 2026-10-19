@@ -38,5 +38,11 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/Select.tsx",
     "src/figma/Input.figma.ts",
   ],
+  "/componentes/tooltips": [
+    "src/data/tooltip.ts",
+    "src/components/TooltipDoc.tsx",
+    "src/components/ui/Tooltip.tsx",
+    "src/figma/Tooltip.figma.ts",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };
