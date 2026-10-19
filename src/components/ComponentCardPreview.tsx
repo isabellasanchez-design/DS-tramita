@@ -109,6 +109,13 @@ const previews: Record<string, () => ReactNode> = {
       <span className="flex-1 py-3 text-center text-[#5c5d70] shadow-[inset_0_-1px_0_#d8d9de]">Documentos</span>
     </div>
   ),
+  card: () => (
+    <div className="flex w-[180px] flex-col gap-2 rounded-[10px] bg-white p-3 text-left shadow-[0_4px_16px_rgba(0,0,0,0.07)]">
+      <div className="h-12 rounded-md bg-[#ebebed]" />
+      <span className="text-xs font-bold text-[#2a32a2]">Registro de marca</span>
+      <span className="text-[10px] leading-3 text-[#484956]">Protege el nombre de tu empresa.</span>
+    </div>
+  ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,
 };
 

@@ -9,6 +9,7 @@ import { AlertToastDoc } from "@/components/AlertToastDoc";
 import { InformationBarDoc } from "@/components/InformationBarDoc";
 import { PaginationDoc } from "@/components/PaginationDoc";
 import { TabsDoc } from "@/components/TabsDoc";
+import { CardDoc } from "@/components/CardDoc";
 import type { ComponentDoc } from "@/data/components";
 
 // Componentes con documentación completa (por slug de components.ts); el resto
@@ -25,6 +26,7 @@ export const detailedDocs = {
   "information-bar": InformationBarDoc,
   pagination: PaginationDoc,
   tabs: TabsDoc,
+  card: CardDoc,
 } as const;
 
 type DocProps = { component: ComponentDoc; eyebrow: string; eyebrowHref: string; docPath: string };

@@ -10,6 +10,15 @@ export type ComponentDoc = {
 
 export const components: ComponentDoc[] = [
   {
+    slug: "card",
+    name: "Card",
+    summary: "Contenedor que agrupa imagen, título, descripción y una acción sobre un mismo tema.",
+    figmaNodeId: "129:1846",
+    variantAxes: [{ name: "Tipo", values: ["Vertical Card", "Horizontal Card", "Testimonial card"] }],
+    states: ["Default", "Hover", "Press", "Disabled"],
+    detailed: true,
+  },
+  {
     slug: "buttons",
     name: "Buttons",
     summary:
@@ -153,6 +162,7 @@ export const componentGroups: Record<string, string[]> = {
   "information-bar": ["information-bar"],
   pagination: ["pagination"],
   tabs: ["tabs"],
+  cards: ["card"],
 };
 
 export function findComponent(slug: string) {

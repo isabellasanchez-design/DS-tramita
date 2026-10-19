@@ -70,5 +70,16 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/Tabs.tsx",
     "src/figma/Tab.figma.ts",
   ],
+  "/componentes/cards": [
+    "src/data/card.ts",
+    "src/components/Card",
+    "src/components/ui/Card.tsx",
+    "src/components/ui/IconButton.tsx",
+    "src/components/ui/TestimonialCard.tsx",
+    "src/figma/VerticalCard.figma.ts",
+    "src/figma/HorizontalCard.figma.ts",
+    "src/figma/IconButton.figma.ts",
+    "src/figma/TestimonialCard.figma.ts",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };

@@ -78,7 +78,7 @@ export const navCategories: NavCategory[] = [
       { slug: "information-bar", label: "Information bar" },
       { slug: "pagination", label: "Pagination" },
       { slug: "tabs", label: "Tabs" },
-      { slug: "cards", label: "Cards" },
+      { slug: "cards", label: "Card" },
       { slug: "modales", label: "Modales" },
       { slug: "tablas", label: "Tablas" },
     ],
