@@ -14,6 +14,7 @@ import { ButtonSizeSpecCard } from "@/components/ButtonSizeSpecCard";
 import { ButtonCodeBlock } from "@/components/ButtonCodeBlock";
 import { ButtonDemo } from "@/components/ButtonDemo";
 import { ReactCodeBlock } from "@/components/CodeBlock";
+import { Callout } from "@/components/doc/DocBlocks";
 import { findComponent, componentGroups } from "@/data/components";
 import {
   buttonTypeNames,
@@ -30,6 +31,7 @@ import {
   buttonSizeNames,
   buttonSizeSpecs,
   buttonReactUsage,
+  buttonFocusNote,
 } from "@/data/buttons";
 import { getCategory } from "@/data/nav";
 
@@ -185,6 +187,7 @@ export default async function ComponenteCategoryPage(props: PageProps<"/componen
                           </tbody>
                         </table>
                       </div>
+                      <Callout>{buttonFocusNote}</Callout>
                     </section>
                   </>
                 ),

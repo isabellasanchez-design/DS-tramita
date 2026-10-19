@@ -15,13 +15,13 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   loading?: boolean;
 };
 
-// Colores por tipo tomados de Figma (src/data/buttons.ts). Primary y Secondary
-// no tienen indicador de foco suficiente en Figma; aquí usan el mismo anillo que
-// Tertiary y Outline para cumplir WCAG 2.4.7.
+// Colores por tipo tomados de Figma (src/data/buttons.ts), tal cual. Ojo: el foco
+// de Primary (solo oscurece el fondo) y de Secondary (sin cambio) no cumple
+// WCAG 2.4.7; se corrige cuando cambie en Figma, como una versión nueva.
 const variantClasses: Record<ButtonType, string> = {
   Primary:
-    "bg-[#23297b] text-white focus-visible:bg-[#1c2057] focus-visible:shadow-[0_0_0_2px_#beb7e6]",
-  Secondary: "bg-[#c9ccee] text-[#2a32a2] focus-visible:shadow-[0_0_0_2px_#beb7e6]",
+    "bg-[#23297b] text-white focus-visible:bg-[#1c2057]",
+  Secondary: "bg-[#c9ccee] text-[#2a32a2]",
   Tertiary: "bg-transparent text-[#2a32a2] focus-visible:shadow-[0_0_0_2px_#beb7e6]",
   Link: "bg-transparent text-[#2a32a2] focus-visible:shadow-[0_0_0_2px_#beb7e6]",
   Destructive: "bg-transparent text-[#b4181d] focus-visible:shadow-[0_0_0_2px_#e6b7b8]",

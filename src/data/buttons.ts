@@ -158,6 +158,9 @@ export const buttonStateInfo: { status: string; when: string; behavior: string }
   },
 ];
 
+export const buttonFocusNote =
+  "Accesibilidad pendiente: en Focus, Primary solo oscurece el fondo (#23297b → #1c2057) y Secondary no cambia, así que quien navega con teclado no ve dónde está el foco (WCAG 2.4.7). Tertiary, Link, Destructive y Outline sí tienen anillo de foco; usar el mismo en Primary y Secondary lo resolvería. Se corrige primero en Figma y luego en código, como una versión nueva.";
+
 export const buttonUsageIntro =
   "Los botones permiten ejecutar acciones dentro de la interfaz y utilizan distintos niveles de énfasis para comunicar su importancia. La variante debe seleccionarse según la jerarquía de la acción, el contexto y el impacto que tendrá sobre el usuario.";
 
