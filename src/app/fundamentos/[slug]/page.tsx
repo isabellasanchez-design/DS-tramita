@@ -23,7 +23,12 @@ export default async function FundamentoDetailPage(props: PageProps<"/fundamento
 
   return (
     <div>
-      <PageHeader eyebrow="Fundamentos" eyebrowHref="/fundamentos" title={item.label} />
+      <PageHeader
+        eyebrow="Fundamentos"
+        eyebrowHref="/fundamentos"
+        docPath={`/fundamentos/${slug}`}
+        title={item.label}
+      />
       <ContentCard>
         <PendingNotice>
           Cuéntame qué principios o reglas debe incluir esta sección y los documentamos aquí.

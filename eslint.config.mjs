@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Plantillas de Code Connect: las ejecuta Figma, no la app.
+    "src/figma/**",
   ]),
 ]);
 

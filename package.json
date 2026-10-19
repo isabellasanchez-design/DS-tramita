@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "versions": "node --no-warnings --experimental-strip-types scripts/versions.mjs",
+    "predev": "npm run versions",
     "dev": "next dev",
+    "prebuild": "npm run versions",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "icons:code-connect": "node scripts/icons-code-connect.mjs"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
@@ -15,6 +19,7 @@
     "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@figma/code-connect": "^2.0.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

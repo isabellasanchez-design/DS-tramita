@@ -1,5 +1,19 @@
 import { notFound } from "next/navigation";
 import { ComponentDetail } from "@/components/ComponentDetail";
+import { CheckboxDoc } from "@/components/CheckboxDoc";
+import { RadioDoc } from "@/components/RadioDoc";
+import { SwitchDoc } from "@/components/SwitchDoc";
+import { ChipsDoc } from "@/components/ChipsDoc";
+import { TagsDoc } from "@/components/TagsDoc";
+
+// Componentes con documentación completa; el resto usa ComponentDetail.
+const detailedDocs = {
+  checkbox: CheckboxDoc,
+  "radio-button": RadioDoc,
+  switch: SwitchDoc,
+  chips: ChipsDoc,
+  tags: TagsDoc,
+} as const;
 import { components, componentGroups } from "@/data/components";
 import { getCategory } from "@/data/nav";
 
@@ -29,11 +43,24 @@ export default async function ComponenteDetailPage(
     notFound();
   }
 
+  const DetailedDoc = detailedDocs[componentSlug as keyof typeof detailedDocs];
+  if (DetailedDoc) {
+    return (
+      <DetailedDoc
+        component={component}
+        eyebrow={item.label}
+        eyebrowHref={`/componentes/${slug}`}
+        docPath={`/componentes/${slug}/${componentSlug}`}
+      />
+    );
+  }
+
   return (
     <ComponentDetail
       component={component}
       eyebrow={item.label}
       eyebrowHref={`/componentes/${slug}`}
+      docPath={`/componentes/${slug}/${componentSlug}`}
     />
   );
 }

@@ -7,6 +7,7 @@ export default function Home() {
     <div>
       <PageHeader
         eyebrow="D.S. Tramita"
+        docPath="/"
         title="Design System Tramita"
         description="Documentación viva del sistema de diseño de Tramita: fundamentos, estilos y componentes de interfaz, con enlace directo al archivo de Figma donde ya existe contenido."
       />

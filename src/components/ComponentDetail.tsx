@@ -8,16 +8,19 @@ export function ComponentDetail({
   component,
   eyebrow,
   eyebrowHref,
+  docPath,
 }: {
   component: ComponentDoc;
   eyebrow: string;
   eyebrowHref: string;
+  docPath: string;
 }) {
   return (
     <div>
       <PageHeader
         eyebrow={eyebrow}
         eyebrowHref={eyebrowHref}
+        docPath={docPath}
         title={component.name}
         description={component.summary}
         action={<FigmaLink nodeId={component.figmaNodeId} />}

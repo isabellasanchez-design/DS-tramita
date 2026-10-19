@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { VersionInfo } from "@/components/VersionTag";
 
 export function PageHeader({
   eyebrow,
@@ -7,12 +8,15 @@ export function PageHeader({
   title,
   description,
   action,
+  docPath,
 }: {
   eyebrow?: string;
   eyebrowHref?: string;
   title: string;
   description?: string;
   action?: ReactNode;
+  /** Ruta del documento para mostrar su versión; "/" muestra la del D.S. */
+  docPath?: string;
 }) {
   return (
     <header className="mb-10">
@@ -44,6 +48,7 @@ export function PageHeader({
             {description}
           </p>
         ) : null}
+        {docPath ? <VersionInfo path={docPath} /> : null}
       </div>
     </header>
   );
