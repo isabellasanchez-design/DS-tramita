@@ -57,5 +57,11 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/InformationBar.tsx",
     "src/figma/InformationBar.figma.ts",
   ],
+  "/componentes/navegacion": [
+    "src/data/pagination.ts",
+    "src/components/Pagination",
+    "src/components/ui/Pagination.tsx",
+    "src/figma/Pagination",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };
