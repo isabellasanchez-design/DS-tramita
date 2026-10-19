@@ -270,3 +270,19 @@ export function getButtonCssText(type: ButtonType): string {
   const body = lines.map((line) => `  ${line.property}: ${line.value};`).join("\n");
   return `${className} {\n${body}\n}`;
 }
+
+export const buttonReactUsage = `import { Button } from "@/components/ui/Button";
+import { CaretCircleRightIcon } from "@phosphor-icons/react/dist/ssr";
+
+<Button
+  variant="Primary"      // Primary · Secondary · Tertiary · Outline · Link · Destructive
+  size="Medium"          // Small · Medium · Large
+  iconRight={<CaretCircleRightIcon weight="regular" />}
+  loading={enviando}     // muestra el progreso y bloquea clics sin perder el foco
+  type="submit"
+>
+  Continuar
+</Button>
+
+// Solo ícono: el nombre accesible va en aria-label.
+<Button variant="Tertiary" aria-label="Siguiente" iconLeft={<CaretCircleRightIcon />} />`;

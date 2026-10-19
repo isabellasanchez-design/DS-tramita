@@ -14,7 +14,12 @@ export const docSources: Record<string, string[]> = {
   ],
   "/estilos/tipografia": ["src/data/typography.ts"],
   "/estilos/iconografia": ["src/data/phosphor-icons.ts", "src/components/IconGallery.tsx"],
-  "/componentes/botones": ["src/data/buttons.ts", "src/components/Button"],
+  "/componentes/botones": [
+    "src/data/buttons.ts",
+    "src/components/Button",
+    "src/components/ui/Button.tsx",
+    "src/figma/Button",
+  ],
   "/componentes/inputs/checkbox": [
     "src/data/checkbox.ts",
     "src/components/Checkbox",

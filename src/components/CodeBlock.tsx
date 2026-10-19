@@ -80,3 +80,11 @@ export function HtmlCodeBlock({ code }: { code: string }) {
     </CodeShell>
   );
 }
+
+export function ReactCodeBlock({ code }: { code: string }) {
+  return (
+    <CodeShell language="tsx" copyText={code}>
+      {code}
+    </CodeShell>
+  );
+}
