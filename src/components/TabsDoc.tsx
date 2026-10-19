@@ -1,0 +1,87 @@
+import { PageHeader } from "@/components/PageHeader";
+import { FigmaLink } from "@/components/FigmaLink";
+import { ContentCard } from "@/components/ContentCard";
+import { Tabs as DocTabs } from "@/components/Tabs";
+import { ReactCodeBlock } from "@/components/CodeBlock";
+import { TabsDemo } from "@/components/TabsExamples";
+import { BulletList, Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import type { ComponentDoc } from "@/data/components";
+import { tabsAccessibility, tabsDefinition, tabsFocusNote, tabsReactUsage, tabsSpecs, tabsStates, tabsUsage } from "@/data/tabs";
+
+export function TabsDoc({
+  component,
+  eyebrow,
+  eyebrowHref,
+  docPath,
+}: {
+  component: ComponentDoc;
+  eyebrow: string;
+  eyebrowHref: string;
+  docPath: string;
+}) {
+  return (
+    <div>
+      <PageHeader
+        eyebrow={eyebrow}
+        eyebrowHref={eyebrowHref}
+        docPath={docPath}
+        title="Tabs"
+        description={tabsDefinition}
+        action={<FigmaLink nodeId={component.figmaNodeId} />}
+      />
+      <ContentCard>
+        <DocTabs
+          tabs={[
+            {
+              label: "Resumen",
+              content: (
+                <>
+                  <DocSection title="Pruébalo" description="Con teclado: Tab para entrar, flechas para cambiar de pestaña, Tab de nuevo para ir al contenido.">
+                    <div className="rounded-xl bg-zinc-50 p-6">
+                      <div className="rounded-lg bg-white p-4">
+                        <TabsDemo />
+                      </div>
+                    </div>
+                  </DocSection>
+                  <DocSection title="Estados" className="" level={3}>
+                    <InfoTable columns={["State en Figma", "Cuándo"]} rows={tabsStates.map((row) => [row.figma, row.when])} />
+                  </DocSection>
+                </>
+              ),
+            },
+            {
+              label: "Specs",
+              content: (
+                <DocSection title="Especificaciones" className="" description="Medidas tomadas de Figma.">
+                  <SpecsBlock groups={tabsSpecs} />
+                  <Callout>{tabsFocusNote}</Callout>
+                </DocSection>
+              ),
+            },
+            {
+              label: "Lineamientos",
+              content: (
+                <>
+                  <DocSection title="Cuándo usarlas">
+                    <BulletList items={tabsUsage} />
+                  </DocSection>
+                  <DocSection title="Accesibilidad" className="">
+                    <BulletList items={tabsAccessibility} />
+                  </DocSection>
+                </>
+              ),
+            },
+            {
+              label: "Code",
+              content: (
+                <DocSection title="React" className="">
+                  <ReactCodeBlock code={tabsReactUsage} />
+                </DocSection>
+              ),
+            },
+          ]}
+        />
+      </ContentCard>
+    </div>
+  );
+}

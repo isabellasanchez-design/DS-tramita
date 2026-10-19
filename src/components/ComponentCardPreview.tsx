@@ -103,6 +103,12 @@ const previews: Record<string, () => ReactNode> = {
       ))}
     </div>
   ),
+  tabs: () => (
+    <div className="flex w-full max-w-[260px] text-sm leading-none">
+      <span className="flex-1 py-3 text-center font-bold text-[#2a32a2] shadow-[inset_0_-4px_0_#2a32a2]">Datos</span>
+      <span className="flex-1 py-3 text-center text-[#5c5d70] shadow-[inset_0_-1px_0_#d8d9de]">Documentos</span>
+    </div>
+  ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,
 };
 

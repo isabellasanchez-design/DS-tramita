@@ -63,5 +63,12 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/Pagination.tsx",
     "src/figma/Pagination",
   ],
+  "/componentes/tabs": [
+    "src/data/tabs.ts",
+    "src/components/TabsDoc.tsx",
+    "src/components/TabsExamples.tsx",
+    "src/components/ui/Tabs.tsx",
+    "src/figma/Tab.figma.ts",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };
