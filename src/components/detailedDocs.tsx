@@ -6,6 +6,7 @@ import { TagsDoc } from "@/components/TagsDoc";
 import { TextboxDoc } from "@/components/TextboxDoc";
 import { TooltipDoc } from "@/components/TooltipDoc";
 import { AlertToastDoc } from "@/components/AlertToastDoc";
+import { InformationBarDoc } from "@/components/InformationBarDoc";
 import type { ComponentDoc } from "@/data/components";
 
 // Componentes con documentación completa (por slug de components.ts); el resto
@@ -19,6 +20,7 @@ export const detailedDocs = {
   textbox: TextboxDoc,
   tooltip: TooltipDoc,
   "alert-toast": AlertToastDoc,
+  "information-bar": InformationBarDoc,
 } as const;
 
 type DocProps = { component: ComponentDoc; eyebrow: string; eyebrowHref: string; docPath: string };

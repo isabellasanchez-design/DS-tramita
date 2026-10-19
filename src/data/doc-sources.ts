@@ -51,5 +51,11 @@ export const docSources: Record<string, string[]> = {
     "src/figma/Alert",
     "src/figma/Toast",
   ],
+  "/componentes/alertas/information-bar": [
+    "src/data/informationBar.ts",
+    "src/components/InformationBar",
+    "src/components/ui/InformationBar.tsx",
+    "src/figma/InformationBar.figma.ts",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };

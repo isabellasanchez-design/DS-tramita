@@ -6,6 +6,7 @@ import { ChipPreview } from "@/components/ChipPreview";
 import { RadioPreview } from "@/components/RadioPreview";
 import { SwitchPreview } from "@/components/SwitchPreview";
 import { Alert } from "@/components/ui/Alert";
+import { InformationBar } from "@/components/ui/InformationBar";
 import { Tag } from "@/components/ui/Tag";
 import { TooltipBubble } from "@/components/ui/Tooltip";
 import { getButtonStyle } from "@/data/buttons";
@@ -81,8 +82,13 @@ const previews: Record<string, () => ReactNode> = {
   ),
   "alert-toast": () => (
     <div className="flex w-full max-w-[260px] flex-col gap-2 text-left">
-      <Alert tone="Success">Solicitud enviada.</Alert>
-      <Alert tone="Error" appearance="solid">No pudimos cargar el archivo.</Alert>
+      <Alert tone="Success">Enviada</Alert>
+      <Alert tone="Error" appearance="solid">Error</Alert>
+    </div>
+  ),
+  "information-bar": () => (
+    <div className="w-full overflow-hidden rounded-md text-left">
+      <InformationBar className="sm:px-4">Aviso general</InformationBar>
     </div>
   ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,
