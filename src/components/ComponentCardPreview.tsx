@@ -5,6 +5,7 @@ import { CheckboxPreview } from "@/components/CheckboxPreview";
 import { ChipPreview } from "@/components/ChipPreview";
 import { RadioPreview } from "@/components/RadioPreview";
 import { SwitchPreview } from "@/components/SwitchPreview";
+import { Alert } from "@/components/ui/Alert";
 import { Tag } from "@/components/ui/Tag";
 import { TooltipBubble } from "@/components/ui/Tooltip";
 import { getButtonStyle } from "@/data/buttons";
@@ -76,6 +77,12 @@ const previews: Record<string, () => ReactNode> = {
       <Tag tagCase="Success">Aprobado</Tag>
       <Tag tagCase="Warning" type="Contrast">Pendiente</Tag>
       <Tag tagCase="Error" type="Edge">Rechazado</Tag>
+    </div>
+  ),
+  "alert-toast": () => (
+    <div className="flex w-full max-w-[260px] flex-col gap-2 text-left">
+      <Alert tone="Success">Solicitud enviada.</Alert>
+      <Alert tone="Error" appearance="solid">No pudimos cargar el archivo.</Alert>
     </div>
   ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,

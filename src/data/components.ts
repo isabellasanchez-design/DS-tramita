@@ -85,7 +85,7 @@ export const components: ComponentDoc[] = [
     name: "Alert & Toast",
     summary: "Mensajes emergentes que notifican al usuario sobre el resultado de una acción.",
     figmaNodeId: "68:2434",
-    detailed: false,
+    detailed: true,
   },
   {
     slug: "information-bar",

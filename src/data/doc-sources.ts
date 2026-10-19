@@ -44,5 +44,12 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/Tooltip.tsx",
     "src/figma/Tooltip.figma.ts",
   ],
+  "/componentes/alertas/alert-toast": [
+    "src/data/alerts.ts",
+    "src/components/AlertToast",
+    "src/components/ui/Alert.tsx",
+    "src/figma/Alert",
+    "src/figma/Toast",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };
