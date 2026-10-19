@@ -20,17 +20,17 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/Button.tsx",
     "src/figma/Button",
   ],
-  "/componentes/inputs/checkbox": [
+  "/componentes/checkbox": [
     "src/data/checkbox.ts",
     "src/components/Checkbox",
     "src/components/ui/Checkbox.tsx",
     "src/figma/Checkbox.figma.ts",
   ],
-  "/componentes/inputs/radio-button": ["src/data/radio.ts", "src/components/Radio", "src/components/ui/Radio.tsx"],
-  "/componentes/inputs/switch": ["src/data/switch.ts", "src/components/Switch", "src/components/ui/Switch.tsx"],
-  "/componentes/badges/chips": ["src/data/chips.ts", "src/components/Chip", "src/components/ui/Chip.tsx"],
-  "/componentes/badges/tags": ["src/data/tags.ts", "src/components/TagsDoc.tsx", "src/components/ui/Tag.tsx"],
-  "/componentes/inputs/textbox": [
+  "/componentes/radio-button": ["src/data/radio.ts", "src/components/Radio", "src/components/ui/Radio.tsx"],
+  "/componentes/switch": ["src/data/switch.ts", "src/components/Switch", "src/components/ui/Switch.tsx"],
+  "/componentes/chips": ["src/data/chips.ts", "src/components/Chip", "src/components/ui/Chip.tsx"],
+  "/componentes/tags": ["src/data/tags.ts", "src/components/TagsDoc.tsx", "src/components/ui/Tag.tsx"],
+  "/componentes/textbox": [
     "src/data/textbox.ts",
     "src/components/Textbox",
     "src/components/ui/Field.tsx",
@@ -44,20 +44,20 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/Tooltip.tsx",
     "src/figma/Tooltip.figma.ts",
   ],
-  "/componentes/alertas/alert-toast": [
+  "/componentes/alert-toast": [
     "src/data/alerts.ts",
     "src/components/AlertToast",
     "src/components/ui/Alert.tsx",
     "src/figma/Alert",
     "src/figma/Toast",
   ],
-  "/componentes/alertas/information-bar": [
+  "/componentes/information-bar": [
     "src/data/informationBar.ts",
     "src/components/InformationBar",
     "src/components/ui/InformationBar.tsx",
     "src/figma/InformationBar.figma.ts",
   ],
-  "/componentes/navegacion": [
+  "/componentes/pagination": [
     "src/data/pagination.ts",
     "src/components/Pagination",
     "src/components/ui/Pagination.tsx",

@@ -15,8 +15,8 @@ import { chipStyles } from "@/data/chips";
 import { getRadioStyle } from "@/data/radio";
 import { getSwitchStyle } from "@/data/switch";
 
-// Miniaturas estáticas para las tarjetas de las páginas de grupo
-// (/componentes/inputs, /componentes/badges…). Son decorativas y no usan
+// Miniaturas estáticas para las tarjetas de componentes (/componentes y las
+// páginas de grupo). Son decorativas y no usan
 // controles reales, porque la tarjeta completa ya es un enlace.
 
 function FieldSample({ label, children }: { label: string; children: ReactNode }) {
@@ -89,6 +89,18 @@ const previews: Record<string, () => ReactNode> = {
   "information-bar": () => (
     <div className="w-full overflow-hidden rounded-md text-left">
       <InformationBar className="sm:px-4">Aviso general</InformationBar>
+    </div>
+  ),
+  pagination: () => (
+    <div className="flex items-center gap-1 text-base leading-none text-[#2a32a2]">
+      {["1", "2", "3"].map((n) => (
+        <span
+          key={n}
+          className={`flex h-11 items-center rounded-[20px] ${n === "2" ? "border border-[#2a32a2] bg-white px-4" : "px-3"}`}
+        >
+          {n}
+        </span>
+      ))}
     </div>
   ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,

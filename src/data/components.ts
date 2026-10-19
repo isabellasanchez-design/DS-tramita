@@ -142,12 +142,17 @@ export const components: ComponentDoc[] = [
 // renders that component directly; more than one renders an index page.
 export const componentGroups: Record<string, string[]> = {
   botones: ["buttons"],
-  inputs: ["textbox", "checkbox", "radio-button", "switch"],
-  navegacion: ["pagination"],
+  textbox: ["textbox"],
+  checkbox: ["checkbox"],
+  "radio-button": ["radio-button"],
+  switch: ["switch"],
+  chips: ["chips"],
+  tags: ["tags"],
   tooltips: ["tooltip"],
+  "alert-toast": ["alert-toast"],
+  "information-bar": ["information-bar"],
+  pagination: ["pagination"],
   tabs: ["tabs"],
-  alertas: ["alert-toast", "information-bar"],
-  badges: ["chips", "tags"],
 };
 
 export function findComponent(slug: string) {
