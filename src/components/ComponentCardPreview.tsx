@@ -1,0 +1,87 @@
+import { CaretDownIcon, ClockIcon } from "@phosphor-icons/react/dist/ssr";
+import type { ReactNode } from "react";
+import { ButtonPreview } from "@/components/ButtonPreview";
+import { CheckboxPreview } from "@/components/CheckboxPreview";
+import { ChipPreview } from "@/components/ChipPreview";
+import { RadioPreview } from "@/components/RadioPreview";
+import { SwitchPreview } from "@/components/SwitchPreview";
+import { Tag } from "@/components/ui/Tag";
+import { TooltipBubble } from "@/components/ui/Tooltip";
+import { getButtonStyle } from "@/data/buttons";
+import { getCheckboxStyle } from "@/data/checkbox";
+import { chipStyles } from "@/data/chips";
+import { getRadioStyle } from "@/data/radio";
+import { getSwitchStyle } from "@/data/switch";
+
+// Miniaturas estáticas para las tarjetas de las páginas de grupo
+// (/componentes/inputs, /componentes/badges…). Son decorativas y no usan
+// controles reales, porque la tarjeta completa ya es un enlace.
+
+function FieldSample({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <div className="flex w-full max-w-[220px] flex-col gap-1">
+      <span className="text-xs text-[#202025]">{label}</span>
+      <div className="flex h-8 items-center gap-1.5 rounded-[4px] border border-[#e4e5f4] bg-white px-2 text-xs text-[#9496a8]">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+const previews: Record<string, () => ReactNode> = {
+  buttons: () => (
+    <div className="flex flex-wrap items-center justify-center gap-3">
+      <ButtonPreview style={getButtonStyle("Primary", "Default")} label="Continuar" />
+      <ButtonPreview style={getButtonStyle("Outline", "Default")} label="Volver" />
+    </div>
+  ),
+  textbox: () => (
+    <div className="flex w-full flex-col items-center gap-2">
+      <FieldSample label="Nombre completo">Escribe tu nombre</FieldSample>
+      <FieldSample label="Hora de la cita">
+        <ClockIcon className="size-3.5 text-[#0e0d12]" />
+        <span className="flex-1">Selecciona una hora</span>
+        <CaretDownIcon className="size-3.5 text-[#0e0d12]" />
+      </FieldSample>
+    </div>
+  ),
+  checkbox: () => (
+    <div className="flex items-center gap-4">
+      <CheckboxPreview style={getCheckboxStyle("Selected", "Enabled")} label="" scale={1.5} />
+      <CheckboxPreview style={getCheckboxStyle("Unselected", "Enabled")} label="" scale={1.5} />
+      <CheckboxPreview style={getCheckboxStyle("Selected", "Disabled")} label="" scale={1.5} />
+    </div>
+  ),
+  "radio-button": () => (
+    <div className="flex items-center gap-4">
+      <RadioPreview style={getRadioStyle("True", "Enabled")} label="" scale={1.5} />
+      <RadioPreview style={getRadioStyle("False", "Enabled")} label="" scale={1.5} />
+      <RadioPreview style={getRadioStyle("True", "Disabled")} label="" scale={1.5} />
+    </div>
+  ),
+  switch: () => (
+    <div className="flex items-center gap-4">
+      <SwitchPreview style={getSwitchStyle("Yes", "Enabled")} label="" scale={1.25} />
+      <SwitchPreview style={getSwitchStyle("No", "Enabled")} label="" scale={1.25} />
+    </div>
+  ),
+  chips: () => (
+    <div className="flex flex-wrap items-center justify-center gap-2">
+      <ChipPreview style={chipStyles.Select} label="Aprobado" />
+      <ChipPreview style={chipStyles.Default} label="En revisión" showIcon={false} />
+    </div>
+  ),
+  tags: () => (
+    <div className="flex flex-wrap items-center justify-center gap-2">
+      <Tag tagCase="Success">Aprobado</Tag>
+      <Tag tagCase="Warning" type="Contrast">Pendiente</Tag>
+      <Tag tagCase="Error" type="Edge">Rechazado</Tag>
+    </div>
+  ),
+  tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,
+};
+
+/** Miniatura del componente por su slug de components.ts, o undefined si aún no tiene. */
+export function componentCardPreview(slug: string) {
+  return previews[slug]?.();
+}

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/PageHeader";
 import { IndexCard } from "@/components/IndexCard";
+import { componentCardPreview } from "@/components/ComponentCardPreview";
 import { ComponentDetail } from "@/components/ComponentDetail";
 import { renderDetailedDoc } from "@/components/detailedDocs";
 import { ButtonPreview } from "@/components/ButtonPreview";
@@ -378,6 +379,7 @@ export default async function ComponenteCategoryPage(props: PageProps<"/componen
                 href={`/componentes/${slug}/${componentSlug}`}
                 title={component.name}
                 description={component.summary}
+                preview={componentCardPreview(componentSlug)}
               />
             );
           })}
