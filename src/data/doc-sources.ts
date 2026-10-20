@@ -93,5 +93,11 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/SidebarMenu.tsx",
     "src/figma/SidebarMenu",
   ],
+  "/componentes/modales": [
+    "src/data/popup.ts",
+    "src/components/Popup",
+    "src/components/ui/Popup.tsx",
+    "src/figma/Popup.figma.ts",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };

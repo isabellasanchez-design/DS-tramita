@@ -10,6 +10,18 @@ export type ComponentDoc = {
 
 export const components: ComponentDoc[] = [
   {
+    slug: "popup",
+    name: "Popup",
+    summary: "Ventana modal para confirmar acciones, mostrar resultados importantes o aceptar términos.",
+    figmaNodeId: "129:5397",
+    variantAxes: [
+      { name: "Case", values: ["Default", "Success", "Error", "Warning"] },
+      { name: "Property 1", values: ["Vertical", "Horizontal"] },
+      { name: "Tipe", values: ["Predeterminado", "Con marca"] },
+    ],
+    detailed: true,
+  },
+  {
     slug: "menu",
     name: "Menu",
     summary: "Barra lateral de navegación que se abre o se cierra, con secciones y la página actual marcada.",
@@ -181,6 +193,7 @@ export const componentGroups: Record<string, string[]> = {
   cards: ["card"],
   dropdown: ["dropdown"],
   menu: ["menu"],
+  modales: ["popup"],
 };
 
 export function findComponent(slug: string) {

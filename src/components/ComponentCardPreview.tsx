@@ -130,6 +130,14 @@ const previews: Record<string, () => ReactNode> = {
       <span className="px-2 py-1.5 text-white">Ventanillas</span>
     </div>
   ),
+  popup: () => (
+    <div className="flex w-[170px] flex-col items-center gap-1.5 rounded-[12px] bg-white px-3 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+      <span className="size-6 rounded-full bg-[#e4e5f4]" />
+      <span className="text-xs font-bold text-[#2a32a2]">¿Radicar solicitud?</span>
+      <span className="w-full rounded-[10px] bg-[#23297b] py-1 text-center text-[10px] text-white">Radicar</span>
+      <span className="w-full rounded-[10px] border border-[#2a32a2] py-1 text-center text-[10px] text-[#2a32a2]">Cancelar</span>
+    </div>
+  ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,
 };
 
