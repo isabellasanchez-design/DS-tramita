@@ -14,6 +14,7 @@ import { DropdownDoc } from "@/components/DropdownDoc";
 import { MenuDoc } from "@/components/MenuDoc";
 import { PopupDoc } from "@/components/PopupDoc";
 import { StepperDoc } from "@/components/StepperDoc";
+import { UploaderDoc } from "@/components/UploaderDoc";
 import type { ComponentDoc } from "@/data/components";
 
 // Componentes con documentación completa (por slug de components.ts); el resto
@@ -35,6 +36,7 @@ export const detailedDocs = {
   menu: MenuDoc,
   popup: PopupDoc,
   stepper: StepperDoc,
+  uploader: UploaderDoc,
 } as const;
 
 type DocProps = { component: ComponentDoc; eyebrow: string; eyebrowHref: string; docPath: string };

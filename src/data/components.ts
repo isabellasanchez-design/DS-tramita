@@ -10,6 +10,14 @@ export type ComponentDoc = {
 
 export const components: ComponentDoc[] = [
   {
+    slug: "uploader",
+    name: "Uploader",
+    summary: "Campo para adjuntar documentos y seguir su estado: cargando, en revisión, aprobado o con error.",
+    figmaNodeId: "173:359",
+    states: ["Default", "Progress bar", "Loaded", "Review", "Charged", "Error"],
+    detailed: true,
+  },
+  {
     slug: "stepper",
     name: "Stepper",
     summary: "Indica en qué paso va la persona dentro de un proceso y cuántos le faltan.",
@@ -203,6 +211,7 @@ export const componentGroups: Record<string, string[]> = {
   menu: ["menu"],
   modales: ["popup"],
   stepper: ["stepper"],
+  uploader: ["uploader"],
 };
 
 export function findComponent(slug: string) {

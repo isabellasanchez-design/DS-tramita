@@ -105,5 +105,11 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/Stepper.tsx",
     "src/figma/StepperItem.figma.ts",
   ],
+  "/componentes/uploader": [
+    "src/data/uploader.ts",
+    "src/components/Uploader",
+    "src/components/ui/Uploader.tsx",
+    "src/figma/Uploader",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };

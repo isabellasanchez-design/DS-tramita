@@ -144,6 +144,15 @@ const previews: Record<string, () => ReactNode> = {
       <Stepper steps={["Tipo", "Datos", "Documentos"]} current={1} aria-label="Ejemplo" />
     </div>
   ),
+  uploader: () => (
+    <div className="flex w-[220px] items-center gap-2 rounded-[4px] border border-dashed border-[#c5c1d1] bg-[#f3f4f9] p-2.5 text-left">
+      <span className="size-7 shrink-0 rounded-[4px] bg-[#e4e5f4]" />
+      <span className="flex flex-col">
+        <span className="text-[11px] leading-tight text-[#202025]">Seleccione un archivo o arrástrelo aquí</span>
+        <span className="text-[9px] text-[#5c5d70]">PDF · máx. 10 MB</span>
+      </span>
+    </div>
+  ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,
 };
 
