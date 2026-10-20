@@ -76,14 +76,16 @@ export const components: ComponentDoc[] = [
     name: "Textbox",
     summary: "Campo de texto para capturar información escrita por el usuario.",
     figmaNodeId: "33:399",
-    detailed: false,
+    variantAxes: [{ name: "use-case", values: ["Text field", "Date", "Password", "Dropdown"] }],
+    states: ["Default", "Active", "Filled", "Error", "Success", "Disabled"],
+    detailed: true,
   },
   {
     slug: "alert-toast",
     name: "Alert & Toast",
     summary: "Mensajes emergentes que notifican al usuario sobre el resultado de una acción.",
     figmaNodeId: "68:2434",
-    detailed: false,
+    detailed: true,
   },
   {
     slug: "information-bar",
@@ -140,12 +142,17 @@ export const components: ComponentDoc[] = [
 // renders that component directly; more than one renders an index page.
 export const componentGroups: Record<string, string[]> = {
   botones: ["buttons"],
-  inputs: ["textbox", "checkbox", "radio-button", "switch"],
-  navegacion: ["pagination"],
+  textbox: ["textbox"],
+  checkbox: ["checkbox"],
+  "radio-button": ["radio-button"],
+  switch: ["switch"],
+  chips: ["chips"],
+  tags: ["tags"],
   tooltips: ["tooltip"],
+  "alert-toast": ["alert-toast"],
+  "information-bar": ["information-bar"],
+  pagination: ["pagination"],
   tabs: ["tabs"],
-  alertas: ["alert-toast", "information-bar"],
-  badges: ["chips", "tags"],
 };
 
 export function findComponent(slug: string) {

@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/PageHeader";
 import { IndexCard } from "@/components/IndexCard";
+import { componentCardPreview } from "@/components/ComponentCardPreview";
 import { ComponentDetail } from "@/components/ComponentDetail";
+import { renderDetailedDoc } from "@/components/detailedDocs";
 import { ButtonPreview } from "@/components/ButtonPreview";
 import { FigmaLink } from "@/components/FigmaLink";
 import { PendingNotice } from "@/components/PendingNotice";
@@ -342,6 +344,13 @@ export default async function ComponenteCategoryPage(props: PageProps<"/componen
   }
 
   if (group && group.length === 1) {
+    const detailedDoc = renderDetailedDoc({
+      component: findComponent(group[0]),
+      eyebrow: "Componentes",
+      eyebrowHref: "/componentes",
+      docPath: `/componentes/${slug}`,
+    });
+    if (detailedDoc) return detailedDoc;
     return (
       <ComponentDetail
         component={findComponent(group[0])}
@@ -370,6 +379,7 @@ export default async function ComponenteCategoryPage(props: PageProps<"/componen
                 href={`/componentes/${slug}/${componentSlug}`}
                 title={component.name}
                 description={component.summary}
+                preview={componentCardPreview(componentSlug)}
               />
             );
           })}
