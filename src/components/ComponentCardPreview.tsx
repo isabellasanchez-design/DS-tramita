@@ -7,6 +7,9 @@ import { RadioPreview } from "@/components/RadioPreview";
 import { SwitchPreview } from "@/components/SwitchPreview";
 import { Alert } from "@/components/ui/Alert";
 import { InformationBar } from "@/components/ui/InformationBar";
+import { Stepper } from "@/components/ui/Stepper";
+import { ActivityTimeline, ActivityTimelineItem } from "@/components/ui/ActivityTimeline";
+import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Tag } from "@/components/ui/Tag";
 import { TooltipBubble } from "@/components/ui/Tooltip";
 import { getButtonStyle } from "@/data/buttons";
@@ -107,6 +110,91 @@ const previews: Record<string, () => ReactNode> = {
     <div className="flex w-full max-w-[260px] text-sm leading-none">
       <span className="flex-1 py-3 text-center font-bold text-[#2a32a2] shadow-[inset_0_-4px_0_#2a32a2]">Datos</span>
       <span className="flex-1 py-3 text-center text-[#5c5d70] shadow-[inset_0_-1px_0_#d8d9de]">Documentos</span>
+    </div>
+  ),
+  card: () => (
+    <div className="flex w-[180px] flex-col gap-2 rounded-[10px] bg-white p-3 text-left shadow-[0_4px_16px_rgba(0,0,0,0.07)]">
+      <div className="h-12 rounded-md bg-[#ebebed]" />
+      <span className="text-xs font-bold text-[#2a32a2]">Registro de marca</span>
+      <span className="text-[10px] leading-3 text-[#484956]">Protege el nombre de tu empresa.</span>
+    </div>
+  ),
+  dropdown: () => (
+    <div className="w-[200px] overflow-hidden rounded-[8px] bg-white text-left text-xs text-[#202025]">
+      <div className="px-2 py-2 font-bold shadow-[inset_0_1px_0_#d8d9de]">Bogotá</div>
+      <div className="bg-[#e4e5f4] px-2 py-2 shadow-[inset_0_0_0_2px_#2a32a2]">Medellín</div>
+      <div className="px-2 py-2 shadow-[inset_0_1px_0_#d8d9de]">Cali</div>
+    </div>
+  ),
+  menu: () => (
+    <div className="flex h-28 w-[150px] flex-col gap-1 rounded-md bg-[linear-gradient(180deg,#1a1f6b_0%,#2830a6_46%,#2830a6_100%)] p-2 text-left text-[11px] leading-none">
+      <span className="rounded-[6px] bg-[#e4e5f4] px-2 py-1.5 font-bold text-[#2a32a2]">Inicio</span>
+      <span className="px-2 py-1.5 text-white">Servicios</span>
+      <span className="px-2 py-1.5 text-white">Ventanillas</span>
+    </div>
+  ),
+  popup: () => (
+    <div className="flex w-[170px] flex-col items-center gap-1.5 rounded-[12px] bg-white px-3 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+      <span className="size-6 rounded-full bg-[#e4e5f4]" />
+      <span className="text-xs font-bold text-[#2a32a2]">¿Radicar solicitud?</span>
+      <span className="w-full rounded-[10px] bg-[#23297b] py-1 text-center text-[10px] text-white">Radicar</span>
+      <span className="w-full rounded-[10px] border border-[#2a32a2] py-1 text-center text-[10px] text-[#2a32a2]">Cancelar</span>
+    </div>
+  ),
+  stepper: () => (
+    <div className="w-full max-w-[280px]">
+      <Stepper steps={["Tipo", "Datos", "Documentos"]} current={1} aria-label="Ejemplo" />
+    </div>
+  ),
+  uploader: () => (
+    <div className="flex w-[220px] items-center gap-2 rounded-[4px] border border-dashed border-[#c5c1d1] bg-[#f3f4f9] p-2.5 text-left">
+      <span className="size-7 shrink-0 rounded-[4px] bg-[#e4e5f4]" />
+      <span className="flex flex-col">
+        <span className="text-[11px] leading-tight text-[#202025]">Seleccione un archivo o arrástrelo aquí</span>
+        <span className="text-[9px] text-[#5c5d70]">PDF · máx. 10 MB</span>
+      </span>
+    </div>
+  ),
+  "expandable-tree": () => (
+    <div className="flex w-[220px] flex-col text-left text-[11px] leading-tight">
+      <span className="bg-white px-2 py-1.5 text-[#202025]"><b className="font-normal text-[#484956]">AP-01</b> Gobernanza</span>
+      <span className="bg-[#f6f6f7] py-1.5 pl-6 pr-2 text-[#202025]"><b className="font-normal text-[#484956]">EJ-01</b> Fortalecimiento</span>
+      <span className="bg-[#f6f6f7] py-1.5 pl-10 pr-2 text-[#202025]"><b className="font-normal text-[#484956]">IP-01</b> Trámites en línea</span>
+    </div>
+  ),
+  "activity-timeline": () => (
+    <div className="w-[200px] rounded-md bg-white p-2 text-left">
+      <ActivityTimeline aria-label="Ejemplo">
+        <ActivityTimelineItem emphasis="L" title="Trámite cerrado" meta="09:52 AM" />
+        <ActivityTimelineItem emphasis="M" title="Documentos adjuntados" meta="09:48 AM" />
+      </ActivityTimeline>
+    </div>
+  ),
+  comunicaciones: () => (
+    <div className="flex w-[210px] flex-col text-left">
+      <div className="flex flex-col gap-1 border border-b-0 border-[#d8d9de] bg-[#e4e5f4] px-3 py-2 text-[9px] text-[#484956]">
+        <span>De rnt@mincomercio.gov.co</span>
+        <span className="text-[11px] font-bold text-[#2a32a2]">Recordatorio de renovación</span>
+      </div>
+      <div className="border border-[#d8d9de] bg-white px-3 py-3 text-[9px] leading-tight text-[#484956]">Estimado(a) María Rojas, le recordamos…</div>
+    </div>
+  ),
+  indicadores: () => (
+    <div className="flex w-[220px] flex-col gap-2 rounded-[10px] border border-[#d8d9de] bg-white p-3 text-left text-[10px] font-bold text-[#484956]">
+      {[["Alojamiento", 100], ["Agencias", 55], ["Transporte", 45]].map(([label, value]) => (
+        <span key={label} className="flex items-center gap-2">
+          <span className="w-16">{label}</span>
+          <ProgressBar value={Number(value)} className="flex-1" />
+        </span>
+      ))}
+    </div>
+  ),
+  tabla: () => (
+    <div className="w-[230px] overflow-hidden rounded-[12px] text-left text-[10px]">
+      <div className="flex border-b border-[#d8d9de] bg-[#e4e5f4] px-3 py-2 font-bold text-[#484956]"><span className="flex-1">Radicado</span><span className="flex-1">Estado</span></div>
+      {["TH-000005", "TH-000012"].map((r, i) => (
+        <div key={r} className={`flex border-b border-[#d8d9de] px-3 py-2 text-[#202025] ${i === 1 ? "bg-[#c9ccee]" : "bg-white"}`}><span className="flex-1">{r}</span><span className="flex-1">En revisión</span></div>
+      ))}
     </div>
   ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,

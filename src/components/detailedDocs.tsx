@@ -9,6 +9,17 @@ import { AlertToastDoc } from "@/components/AlertToastDoc";
 import { InformationBarDoc } from "@/components/InformationBarDoc";
 import { PaginationDoc } from "@/components/PaginationDoc";
 import { TabsDoc } from "@/components/TabsDoc";
+import { CardDoc } from "@/components/CardDoc";
+import { DropdownDoc } from "@/components/DropdownDoc";
+import { MenuDoc } from "@/components/MenuDoc";
+import { PopupDoc } from "@/components/PopupDoc";
+import { StepperDoc } from "@/components/StepperDoc";
+import { UploaderDoc } from "@/components/UploaderDoc";
+import { TreeDoc } from "@/components/TreeDoc";
+import { TimelineDoc } from "@/components/TimelineDoc";
+import { ComunicacionesDoc } from "@/components/ComunicacionesDoc";
+import { IndicatorsDoc } from "@/components/IndicatorsDoc";
+import { TablaDoc } from "@/components/TablaDoc";
 import type { ComponentDoc } from "@/data/components";
 
 // Componentes con documentación completa (por slug de components.ts); el resto
@@ -25,6 +36,17 @@ export const detailedDocs = {
   "information-bar": InformationBarDoc,
   pagination: PaginationDoc,
   tabs: TabsDoc,
+  card: CardDoc,
+  dropdown: DropdownDoc,
+  menu: MenuDoc,
+  popup: PopupDoc,
+  stepper: StepperDoc,
+  uploader: UploaderDoc,
+  "expandable-tree": TreeDoc,
+  "activity-timeline": TimelineDoc,
+  comunicaciones: ComunicacionesDoc,
+  indicadores: IndicatorsDoc,
+  tabla: TablaDoc,
 } as const;
 
 type DocProps = { component: ComponentDoc; eyebrow: string; eyebrowHref: string; docPath: string };
