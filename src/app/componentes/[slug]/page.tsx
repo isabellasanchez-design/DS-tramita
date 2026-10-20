@@ -12,6 +12,9 @@ import { ButtonUsageExample } from "@/components/ButtonUsageExamples";
 import { ButtonSizePreview } from "@/components/ButtonSizePreview";
 import { ButtonSizeSpecCard } from "@/components/ButtonSizeSpecCard";
 import { ButtonCodeBlock } from "@/components/ButtonCodeBlock";
+import { ButtonDemo } from "@/components/ButtonDemo";
+import { ReactCodeBlock } from "@/components/CodeBlock";
+import { Callout } from "@/components/doc/DocBlocks";
 import { findComponent, componentGroups } from "@/data/components";
 import {
   buttonTypeNames,
@@ -27,6 +30,8 @@ import {
   buttonBestPractices,
   buttonSizeNames,
   buttonSizeSpecs,
+  buttonReactUsage,
+  buttonFocusNote,
 } from "@/data/buttons";
 import { getCategory } from "@/data/nav";
 
@@ -182,6 +187,7 @@ export default async function ComponenteCategoryPage(props: PageProps<"/componen
                           </tbody>
                         </table>
                       </div>
+                      <Callout>{buttonFocusNote}</Callout>
                     </section>
                   </>
                 ),
@@ -289,6 +295,18 @@ export default async function ComponenteCategoryPage(props: PageProps<"/componen
                 label: "Code",
                 content: (
                   <>
+                    <section className="mb-8">
+                      <h2 className="mb-1 text-lg font-semibold text-zinc-900">React</h2>
+                      <p className="mb-4 text-sm text-zinc-600">
+                        Componente <code className="font-mono">Button</code> sobre el botón
+                        nativo. Pruébalo con mouse y con teclado (Tab, Enter, Espacio).
+                      </p>
+                      <div className="mb-4 rounded-xl bg-zinc-50 p-6">
+                        <ButtonDemo />
+                      </div>
+                      <ReactCodeBlock code={buttonReactUsage} />
+                    </section>
+
                     <section>
                       <h2 className="mb-1 text-lg font-semibold text-zinc-900">
                         Código de cada variante
