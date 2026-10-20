@@ -81,5 +81,11 @@ export const docSources: Record<string, string[]> = {
     "src/figma/IconButton.figma.ts",
     "src/figma/TestimonialCard.figma.ts",
   ],
+  "/componentes/dropdown": [
+    "src/data/dropdown.ts",
+    "src/components/Dropdown",
+    "src/components/ui/Dropdown.tsx",
+    "src/figma/Dropdown",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };

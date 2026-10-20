@@ -10,6 +10,14 @@ export type ComponentDoc = {
 
 export const components: ComponentDoc[] = [
   {
+    slug: "dropdown",
+    name: "Dropdown",
+    summary: "Lista desplegable para elegir una o varias opciones, con radio, checkbox o ícono.",
+    figmaNodeId: "697:9",
+    states: ["Default", "Hover", "Focus", "Selected"],
+    detailed: true,
+  },
+  {
     slug: "card",
     name: "Card",
     summary: "Contenedor que agrupa imagen, título, descripción y una acción sobre un mismo tema.",
@@ -163,6 +171,7 @@ export const componentGroups: Record<string, string[]> = {
   pagination: ["pagination"],
   tabs: ["tabs"],
   cards: ["card"],
+  dropdown: ["dropdown"],
 };
 
 export function findComponent(slug: string) {

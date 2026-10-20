@@ -116,6 +116,13 @@ const previews: Record<string, () => ReactNode> = {
       <span className="text-[10px] leading-3 text-[#484956]">Protege el nombre de tu empresa.</span>
     </div>
   ),
+  dropdown: () => (
+    <div className="w-[200px] overflow-hidden rounded-[8px] bg-white text-left text-xs text-[#202025]">
+      <div className="px-2 py-2 font-bold shadow-[inset_0_1px_0_#d8d9de]">Bogotá</div>
+      <div className="bg-[#e4e5f4] px-2 py-2 shadow-[inset_0_0_0_2px_#2a32a2]">Medellín</div>
+      <div className="px-2 py-2 shadow-[inset_0_1px_0_#d8d9de]">Cali</div>
+    </div>
+  ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,
 };
 
