@@ -38,18 +38,18 @@ export function ComunicacionesDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Escribe el asunto y el contenido, usa la barra o inserta una variable: la vista previa se actualiza.">
-                    <div className="rounded-xl bg-zinc-50 p-6">
-                      <ComunicacionesDemo />
-                    </div>
-                    <Callout>{comunicacionesNote}</Callout>
-                  </DocSection>
-                  <DocSection title="Piezas" className="" level={3}>
+                  <DocSection title="Piezas" level={3}>
                     <InfoTable
                       columns={["Figma", "Código", "Qué es"]}
                       minWidth={640}
                       rows={comunicacionesParts.map((row) => [row.name, <code key="c" className="font-mono text-xs">{row.component}</code>, row.detail])}
                     />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Escribe el asunto y el contenido, usa la barra o inserta una variable: la vista previa se actualiza.">
+                    <div className="rounded-xl bg-zinc-50 p-6">
+                      <ComunicacionesDemo />
+                    </div>
+                    <Callout>{comunicacionesNote}</Callout>
                   </DocSection>
                 </>
               ),

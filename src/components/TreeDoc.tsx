@@ -30,14 +30,14 @@ export function TreeDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Con clic o con teclado: Tab para entrar y flechas para recorrer y abrir.">
+                  <DocSection title="Niveles" level={3}>
+                    <InfoTable columns={["Figma", "Ícono", "Sangría", "Fondo"]} minWidth={560} rows={treeLevels.map((row) => [row.figma, row.icon, row.indent, row.bg])} />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Con clic o con teclado: Tab para entrar y flechas para recorrer y abrir.">
                     <div className="rounded-xl bg-zinc-50 p-6">
                       <TreeDemo />
                     </div>
                     <Callout>{treeNote}</Callout>
-                  </DocSection>
-                  <DocSection title="Niveles" className="" level={3}>
-                    <InfoTable columns={["Figma", "Ícono", "Sangría", "Fondo"]} minWidth={560} rows={treeLevels.map((row) => [row.figma, row.icon, row.indent, row.bg])} />
                   </DocSection>
                 </>
               ),

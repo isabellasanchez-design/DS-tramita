@@ -37,15 +37,15 @@ export function TabsDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Con teclado: Tab para entrar, flechas para cambiar de pestaña, Tab de nuevo para ir al contenido.">
+                  <DocSection title="Estados" level={3}>
+                    <InfoTable columns={["State en Figma", "Cuándo"]} rows={tabsStates.map((row) => [row.figma, row.when])} />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Con teclado: Tab para entrar, flechas para cambiar de pestaña, Tab de nuevo para ir al contenido.">
                     <div className="rounded-xl bg-zinc-50 p-6">
                       <div className="rounded-lg bg-white p-4">
                         <TabsDemo />
                       </div>
                     </div>
-                  </DocSection>
-                  <DocSection title="Estados" className="" level={3}>
-                    <InfoTable columns={["State en Figma", "Cuándo"]} rows={tabsStates.map((row) => [row.figma, row.when])} />
                   </DocSection>
                 </>
               ),

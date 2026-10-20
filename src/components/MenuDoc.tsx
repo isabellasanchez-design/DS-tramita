@@ -37,13 +37,13 @@ export function MenuDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Abierta y cerrada. El botón circular del borde la abre y la cierra.">
+                  <DocSection title="Estados" level={3}>
+                    <InfoTable columns={["Estado", "Cómo se ve"]} rows={menuStateInfo.map((row) => [row.status, row.visual])} />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Abierta y cerrada. El botón circular del borde la abre y la cierra.">
                     <div className="rounded-xl bg-zinc-50 p-6">
                       <MenuDemo />
                     </div>
-                  </DocSection>
-                  <DocSection title="Estados" className="" level={3}>
-                    <InfoTable columns={["Estado", "Cómo se ve"]} rows={menuStateInfo.map((row) => [row.status, row.visual])} />
                   </DocSection>
                 </>
               ),

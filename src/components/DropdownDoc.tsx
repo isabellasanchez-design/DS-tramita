@@ -37,14 +37,14 @@ export function DropdownDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Ábrelo con clic o con flechas; Enter elige, Escape cierra. Escribe una letra para saltar a una opción.">
+                  <DocSection title="Estados de una opción" level={3}>
+                    <InfoTable columns={["Estado", "Cómo se ve"]} rows={dropdownStateInfo.map((row) => [row.status, row.visual])} />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Ábrelo con clic o con flechas; Enter elige, Escape cierra. Escribe una letra para saltar a una opción.">
                     <div className="grid min-h-[420px] grid-cols-1 items-start gap-6 rounded-xl bg-zinc-50 p-6 md:grid-cols-2">
                       <DropdownSingle />
                       <DropdownMultiple />
                     </div>
-                  </DocSection>
-                  <DocSection title="Estados de una opción" className="" level={3}>
-                    <InfoTable columns={["Estado", "Cómo se ve"]} rows={dropdownStateInfo.map((row) => [row.status, row.visual])} />
                   </DocSection>
                 </>
               ),

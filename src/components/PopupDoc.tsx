@@ -37,18 +37,18 @@ export function PopupDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Ábrelo y prueba con teclado: el foco queda dentro, Escape cierra y el foco vuelve al botón.">
-                    <div className="rounded-xl bg-zinc-50 p-6">
-                      <PopupDemo />
-                    </div>
-                  </DocSection>
                   <DocSection title="Variantes" description="Case, orientación y Con marca, mostrados dentro de la página.">
                     <div className="overflow-x-auto rounded-xl bg-zinc-50 p-6">
                       <PopupGallery />
                     </div>
                   </DocSection>
-                  <DocSection title="Cuándo usar cada caso" className="" level={3}>
+                  <DocSection title="Cuándo usar cada caso" level={3}>
                     <InfoTable columns={["Case", "Cuándo usarlo"]} rows={popupCaseInfo.map((row) => [row.tone, row.when])} />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Ábrelo y prueba con teclado: el foco queda dentro, Escape cierra y el foco vuelve al botón.">
+                    <div className="rounded-xl bg-zinc-50 p-6">
+                      <PopupDemo />
+                    </div>
                   </DocSection>
                 </>
               ),

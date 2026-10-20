@@ -30,23 +30,23 @@ export function UploaderDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Elige un archivo (con Tab y Enter) o arrástralo; la carga es simulada.">
-                    <div className="max-w-[690px] rounded-xl bg-zinc-50 p-6">
-                      <UploaderDemo />
-                    </div>
-                  </DocSection>
                   <DocSection title="Estados" description="Los seis estados de Figma.">
                     <div className="max-w-[722px] rounded-xl bg-zinc-50 p-6">
                       <UploaderStates />
                     </div>
                     <Callout>{uploaderContrastNote}</Callout>
                   </DocSection>
-                  <DocSection title="Cuándo aparece cada estado" className="" level={3}>
+                  <DocSection title="Cuándo aparece cada estado" level={3}>
                     <InfoTable
                       columns={["Figma", "Código (status)", "Cuándo", "Cómo se ve"]}
                       minWidth={720}
                       rows={uploaderStates.map((row) => [row.figma, <code key="c" className="font-mono text-xs">{row.code}</code>, row.when, row.look])}
                     />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Elige un archivo (con Tab y Enter) o arrástralo; la carga es simulada.">
+                    <div className="max-w-[690px] rounded-xl bg-zinc-50 p-6">
+                      <UploaderDemo />
+                    </div>
                   </DocSection>
                 </>
               ),

@@ -30,16 +30,16 @@ export function StepperDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Avanza y retrocede para ver los tres estados.">
+                  <DocSection title="Estados de un paso" level={3}>
+                    <InfoTable columns={["Figma", "Significa", "Cómo se ve"]} minWidth={560} rows={stepperStates.map((row) => [row.figma, row.meaning, row.visual])} />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Avanza y retrocede para ver los tres estados.">
                     <div className="rounded-xl bg-zinc-50 p-6">
                       <div className="rounded-lg bg-white p-6">
                         <StepperDemo />
                       </div>
                     </div>
                     <Callout>{stepperContrastNote}</Callout>
-                  </DocSection>
-                  <DocSection title="Estados de un paso" className="" level={3}>
-                    <InfoTable columns={["Figma", "Significa", "Cómo se ve"]} minWidth={560} rows={stepperStates.map((row) => [row.figma, row.meaning, row.visual])} />
                   </DocSection>
                 </>
               ),
