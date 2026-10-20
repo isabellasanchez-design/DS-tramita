@@ -4,7 +4,8 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { DropdownMultiple, DropdownSingle } from "@/components/DropdownExamples";
-import { BulletList, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { dropdownHtml, dropdownCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import { dropdownAccessibility, dropdownDefinition, dropdownReactUsage, dropdownSpecs, dropdownStateInfo, dropdownUsage } from "@/data/dropdown";
 
@@ -72,9 +73,12 @@ export function DropdownDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={dropdownReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={dropdownHtml} css={dropdownCss} />
+                </>
               ),
             },
           ]}

@@ -4,7 +4,8 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { IndicadoresTable, TramitesTable } from "@/components/TablaExamples";
-import { BulletList, Callout, DocSection, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, Callout, DocSection, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { tablaHtml, tablaCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import { tablaAccessibility, tablaDefinition, tablaNote, tablaReactUsage, tablaSpecs, tablaUsage } from "@/data/tabla";
 
@@ -67,9 +68,12 @@ export function TablaDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={tablaReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={tablaHtml} css={tablaCss} />
+                </>
               ),
             },
           ]}

@@ -4,7 +4,8 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { StepperDemo } from "@/components/StepperExamples";
-import { BulletList, Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { stepperHtml, stepperCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import { stepperAccessibility, stepperContrastNote, stepperDefinition, stepperReactUsage, stepperSpecs, stepperStates, stepperUsage } from "@/data/stepper";
 
@@ -67,9 +68,12 @@ export function StepperDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={stepperReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={stepperHtml} css={stepperCss} />
+                </>
               ),
             },
           ]}

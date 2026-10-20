@@ -4,7 +4,8 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { UploaderDemo, UploaderStates } from "@/components/UploaderExamples";
-import { BulletList, Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { uploaderHtml, uploaderCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import { uploaderAccessibility, uploaderContrastNote, uploaderDefinition, uploaderReactUsage, uploaderSpecs, uploaderStates, uploaderUsage } from "@/data/uploader";
 
@@ -74,9 +75,12 @@ export function UploaderDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={uploaderReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={uploaderHtml} css={uploaderCss} />
+                </>
               ),
             },
           ]}

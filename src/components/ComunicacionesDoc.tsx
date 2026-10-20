@@ -4,7 +4,8 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { ComunicacionesDemo } from "@/components/ComunicacionesExamples";
-import { BulletList, Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { comunicacionesHtml, comunicacionesCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import {
   comunicacionesAccessibility,
@@ -77,9 +78,12 @@ export function ComunicacionesDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={comunicacionesReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={comunicacionesHtml} css={comunicacionesCss} />
+                </>
               ),
             },
           ]}

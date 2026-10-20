@@ -4,7 +4,8 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { PopupDemo, PopupGallery } from "@/components/PopupExamples";
-import { BulletList, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { popupHtml, popupCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import { popupAccessibility, popupCaseInfo, popupDefinition, popupReactUsage, popupSpecs, popupUsage } from "@/data/popup";
 
@@ -76,9 +77,12 @@ export function PopupDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={popupReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={popupHtml} css={popupCss} />
+                </>
               ),
             },
           ]}

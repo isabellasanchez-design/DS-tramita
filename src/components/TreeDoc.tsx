@@ -4,7 +4,8 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { TreeDemo } from "@/components/TreeExamples";
-import { BulletList, Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { treeHtml, treeCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import { treeAccessibility, treeDefinition, treeLevels, treeNote, treeReactUsage, treeSpecs, treeUsage } from "@/data/tree";
 
@@ -65,9 +66,12 @@ export function TreeDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={treeReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={treeHtml} css={treeCss} />
+                </>
               ),
             },
           ]}

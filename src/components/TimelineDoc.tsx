@@ -4,7 +4,8 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { ActivityTimeline, ActivityTimelineItem } from "@/components/ui/ActivityTimeline";
-import { BulletList, Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { timelineHtml, timelineCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import { timelineAccessibility, timelineContrastNote, timelineDefinition, timelineEmphasis, timelineReactUsage, timelineSpecs, timelineUsage } from "@/data/timeline";
 
@@ -82,9 +83,12 @@ export function TimelineDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={timelineReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={timelineHtml} css={timelineCss} />
+                </>
               ),
             },
           ]}
