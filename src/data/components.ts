@@ -10,6 +10,13 @@ export type ComponentDoc = {
 
 export const components: ComponentDoc[] = [
   {
+    slug: "comunicaciones",
+    name: "Comunicaciones",
+    summary: "Redactar y previsualizar comunicaciones masivas, con editor de texto y variables.",
+    figmaNodeId: "1303:5685",
+    detailed: true,
+  },
+  {
     slug: "activity-timeline",
     name: "Activity Timeline",
     summary: "Historial de eventos de un trámite o una atención, con hora, responsable y descripción.",
@@ -230,6 +237,7 @@ export const componentGroups: Record<string, string[]> = {
   uploader: ["uploader"],
   "expandable-tree": ["expandable-tree"],
   "activity-timeline": ["activity-timeline"],
+  comunicaciones: ["comunicaciones"],
 };
 
 export function findComponent(slug: string) {

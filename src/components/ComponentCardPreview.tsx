@@ -169,6 +169,15 @@ const previews: Record<string, () => ReactNode> = {
       </ActivityTimeline>
     </div>
   ),
+  comunicaciones: () => (
+    <div className="flex w-[210px] flex-col text-left">
+      <div className="flex flex-col gap-1 border border-b-0 border-[#d8d9de] bg-[#e4e5f4] px-3 py-2 text-[9px] text-[#484956]">
+        <span>De rnt@mincomercio.gov.co</span>
+        <span className="text-[11px] font-bold text-[#2a32a2]">Recordatorio de renovación</span>
+      </div>
+      <div className="border border-[#d8d9de] bg-white px-3 py-3 text-[9px] leading-tight text-[#484956]">Estimado(a) María Rojas, le recordamos…</div>
+    </div>
+  ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,
 };
 

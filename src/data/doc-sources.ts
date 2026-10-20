@@ -123,5 +123,14 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/ActivityTimeline.tsx",
     "src/figma/ActivityTimelineItem.figma.ts",
   ],
+  "/componentes/comunicaciones": [
+    "src/data/comunicaciones.ts",
+    "src/components/Comunicaciones",
+    "src/components/ui/ComposeEmail.tsx",
+    "src/components/ui/EmailPreview.tsx",
+    "src/components/ui/RichTextEditor.tsx",
+    "src/figma/ComposeEmail.figma.ts",
+    "src/figma/EmailPreview.figma.ts",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };
