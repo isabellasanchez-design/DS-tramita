@@ -11,7 +11,17 @@ import { headings, body, bodyUsage } from "@/data/typography";
 import { figmaPages } from "@/data/figma";
 import { getCategory } from "@/data/nav";
 import { SpacingLayoutDiagram } from "@/components/SpacingLayoutDiagram";
-import { DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import {
+  borderColorOutliers,
+  borderColors,
+  borderRules,
+  borderWeights,
+  bordersContrastNote,
+  bordersDefinition,
+  radiusOutliers,
+  radiusScale,
+} from "@/data/borders";
 import { spacingDefinition, spacingLayouts, spacingRules, spacingScale } from "@/data/spacing";
 
 const category = getCategory("estilos");
@@ -183,6 +193,114 @@ export default async function EstiloDetailPage(props: PageProps<"/estilos/[slug]
                 </span>,
                 step.token,
                 step.use,
+              ])}
+            />
+          </DocSection>
+        </ContentCard>
+      </div>
+    );
+  }
+
+  if (slug === "bordes") {
+    return (
+      <div>
+        <PageHeader
+          eyebrow="Estilos"
+          eyebrowHref="/estilos"
+          docPath={`/estilos/${slug}`}
+          title="Bordes"
+          description={bordersDefinition}
+          action={<FigmaLink nodeId={figmaPages.colorUsage} />}
+        />
+        <ContentCard>
+          <DocSection title="Radios" description="Escala de radios de esquina. Los marcados como variable están ligados a una variable local en Figma.">
+            <div className="grid grid-cols-2 gap-4 rounded-xl bg-zinc-50 p-6 sm:grid-cols-4 lg:grid-cols-7">
+              {radiusScale.map((step) => (
+                <figure key={step.label} className="flex flex-col items-center gap-2">
+                  <span
+                    aria-hidden
+                    className="block size-16 border-2 border-[var(--brand-primary)] bg-white"
+                    style={{ borderRadius: step.value === "full" ? 9999 : step.value }}
+                  />
+                  <figcaption className="text-sm font-medium text-zinc-900">{step.label}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </DocSection>
+
+          <DocSection title="Dónde se usa cada radio" level={3}>
+            <InfoTable
+              columns={["Radio", "Variable en Figma", "Dónde se usa"]}
+              rows={radiusScale.map((step) => [step.label, step.variable ? "Sí" : "No, valor fijo", step.use])}
+            />
+          </DocSection>
+
+          <DocSection
+            title="Radios fuera de la escala"
+            level={3}
+            description="Aparecen en un solo componente. Se documentan tal cual para revisarlos en Figma."
+          >
+            <InfoTable columns={["Radio", "Dónde"]} rows={radiusOutliers.map((row) => [row.value, row.where])} />
+          </DocSection>
+
+          <DocSection title="Grosor">
+            <div className="mb-4 grid grid-cols-1 gap-4 rounded-xl bg-zinc-50 p-6 sm:grid-cols-3">
+              {borderWeights.map((weight) => (
+                <figure key={weight.value} className="flex flex-col items-center gap-2">
+                  <span aria-hidden className="block w-full max-w-[160px] bg-[var(--brand-primary)]" style={{ height: weight.value }} />
+                  <figcaption className="text-sm font-medium text-zinc-900">{weight.label}</figcaption>
+                </figure>
+              ))}
+            </div>
+            <InfoTable columns={["Grosor", "Dónde se usa"]} rows={borderWeights.map((weight) => [weight.label, weight.use])} />
+          </DocSection>
+
+          <DocSection title="Posición y estilo">
+            <SpecsBlock groups={borderRules} />
+          </DocSection>
+
+          <DocSection title="Colores" description="Variables de uso › Border en Figma. El contraste es contra blanco.">
+            <div className="grid grid-cols-2 gap-4 rounded-xl bg-zinc-50 p-6 sm:grid-cols-3 lg:grid-cols-5">
+              {borderColors.map((color) => (
+                <figure key={color.name} className="flex flex-col gap-2">
+                  <span aria-hidden className="block h-14 rounded-[8px] border-2 bg-white" style={{ borderColor: color.hex }} />
+                  <figcaption className="flex flex-col text-sm">
+                    <span className="font-medium text-zinc-900">{color.name}</span>
+                    <span className="font-mono text-xs text-zinc-600">{color.hex}</span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </DocSection>
+
+          <DocSection title="Dónde se usa cada color" level={3}>
+            <InfoTable
+              columns={["Variable", "Hex", "Contraste", "Dónde se usa"]}
+              minWidth={640}
+              rows={borderColors.map((color) => [
+                `Border/${color.name}`,
+                <code key="h" className="font-mono text-xs">{color.hex}</code>,
+                `${color.contrast.toLocaleString("es-CO")}:1`,
+                color.use,
+              ])}
+            />
+            <Callout>{bordersContrastNote}</Callout>
+          </DocSection>
+
+          <DocSection
+            title="Colores fuera de las variables"
+            className=""
+            level={3}
+            description="Bordes de componentes que no usan una variable Border. Se documentan tal cual para revisarlos en Figma."
+          >
+            <InfoTable
+              columns={["Color", "Dónde"]}
+              rows={borderColorOutliers.map((row) => [
+                <span key="c" className="flex items-center gap-2">
+                  <span aria-hidden className="inline-block size-4 rounded-[4px] border-2 bg-white" style={{ borderColor: row.hex }} />
+                  <code className="font-mono text-xs">{row.hex}</code>
+                </span>,
+                row.where,
               ])}
             />
           </DocSection>
