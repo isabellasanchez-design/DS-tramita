@@ -10,6 +10,14 @@ export type ComponentDoc = {
 
 export const components: ComponentDoc[] = [
   {
+    slug: "expandable-tree",
+    name: "Expandable tree item",
+    summary: "Lista jerárquica que se abre por niveles, como un plan con ejes, programas e indicadores.",
+    figmaNodeId: "1222:306",
+    variantAxes: [{ name: "Propiedad 1", values: ["Nivel 00-cerrado", "Nivel 00-abierto", "Nivel 02", "Nivel 03", "Nivel 04"] }],
+    detailed: true,
+  },
+  {
     slug: "uploader",
     name: "Uploader",
     summary: "Campo para adjuntar documentos y seguir su estado: cargando, en revisión, aprobado o con error.",
@@ -212,6 +220,7 @@ export const componentGroups: Record<string, string[]> = {
   modales: ["popup"],
   stepper: ["stepper"],
   uploader: ["uploader"],
+  "expandable-tree": ["expandable-tree"],
 };
 
 export function findComponent(slug: string) {

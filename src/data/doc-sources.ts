@@ -111,5 +111,11 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/Uploader.tsx",
     "src/figma/Uploader",
   ],
+  "/componentes/expandable-tree": [
+    "src/data/tree.ts",
+    "src/components/Tree",
+    "src/components/ui/TreeView.tsx",
+    "src/figma/TreeItem.figma.ts",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };

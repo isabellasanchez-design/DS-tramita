@@ -153,6 +153,13 @@ const previews: Record<string, () => ReactNode> = {
       </span>
     </div>
   ),
+  "expandable-tree": () => (
+    <div className="flex w-[220px] flex-col text-left text-[11px] leading-tight">
+      <span className="bg-white px-2 py-1.5 text-[#202025]"><b className="font-normal text-[#484956]">AP-01</b> Gobernanza</span>
+      <span className="bg-[#f6f6f7] py-1.5 pl-6 pr-2 text-[#202025]"><b className="font-normal text-[#484956]">EJ-01</b> Fortalecimiento</span>
+      <span className="bg-[#f6f6f7] py-1.5 pl-10 pr-2 text-[#202025]"><b className="font-normal text-[#484956]">IP-01</b> Trámites en línea</span>
+    </div>
+  ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,
 };
 

@@ -83,6 +83,7 @@ export const navCategories: NavCategory[] = [
       { slug: "menu", label: "Menu" },
       { slug: "stepper", label: "Stepper" },
       { slug: "uploader", label: "Uploader" },
+      { slug: "expandable-tree", label: "Expandable tree item" },
       { slug: "modales", label: "Popup" },
       { slug: "tablas", label: "Tablas" },
     ],
