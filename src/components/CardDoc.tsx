@@ -4,7 +4,8 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { CardSample, IconButtonSizes, TestimonialSample } from "@/components/CardExamples";
-import { BulletList, Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { cardHtml, cardCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import {
   cardAccessibility,
@@ -102,9 +103,12 @@ export function CardDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={cardReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={cardHtml} css={cardCss} />
+                </>
               ),
             },
           ]}

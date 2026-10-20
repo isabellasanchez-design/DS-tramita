@@ -3,7 +3,7 @@ import { FigmaLink } from "@/components/FigmaLink";
 import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { Tag } from "@/components/ui/Tag";
-import { CssCodeBlock, HtmlCodeBlock } from "@/components/CodeBlock";
+import { CssCodeBlock, HtmlCodeBlock, ReactCodeBlock } from "@/components/CodeBlock";
 import {
   AnatomyBlock,
   BulletList,
@@ -14,6 +14,7 @@ import {
   PreviewMatrix,
   SpecsBlock,
 } from "@/components/doc/DocBlocks";
+import { tagReactUsage } from "@/data/code/react-usage";
 import type { ComponentDoc } from "@/data/components";
 import {
   tagAccessibility,
@@ -189,6 +190,13 @@ export function TagsDoc({
               label: "Code",
               content: (
                 <>
+                  <section className="mb-8">
+                    <h2 className="mb-1 text-lg font-semibold text-zinc-900">React</h2>
+                    <p className="mb-4 text-sm text-zinc-600">
+                      Componente del D.S.; el texto va como children.
+                    </p>
+                    <ReactCodeBlock code={tagReactUsage} />
+                  </section>
                   <DocSection title="HTML" description="El Tag es un span: no recibe foco ni es interactivo.">
                     <HtmlCodeBlock code={tagHtml} />
                   </DocSection>

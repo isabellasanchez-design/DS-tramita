@@ -4,7 +4,7 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ChipPreview } from "@/components/ChipPreview";
 import { Chip } from "@/components/ui/Chip";
-import { CssCodeBlock, HtmlCodeBlock } from "@/components/CodeBlock";
+import { CssCodeBlock, HtmlCodeBlock, ReactCodeBlock } from "@/components/CodeBlock";
 import {
   AnatomyBlock,
   BulletList,
@@ -14,6 +14,7 @@ import {
   MarkerBadge,
   SpecsBlock,
 } from "@/components/doc/DocBlocks";
+import { chipReactUsage } from "@/data/code/react-usage";
 import type { ComponentDoc } from "@/data/components";
 import {
   chipAccessibility,
@@ -172,6 +173,13 @@ export function ChipsDoc({
               label: "Code",
               content: (
                 <>
+                  <section className="mb-8">
+                    <h2 className="mb-1 text-lg font-semibold text-zinc-900">React</h2>
+                    <p className="mb-4 text-sm text-zinc-600">
+                      Componente del D.S. sobre el input nativo; acepta todos sus atributos.
+                    </p>
+                    <ReactCodeBlock code={chipReactUsage} />
+                  </section>
                   <DocSection
                     title="HTML"
                     description="Cada chip envuelve un input nativo oculto visualmente (checkbox o radio)."

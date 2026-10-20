@@ -3,8 +3,9 @@ import { FigmaLink } from "@/components/FigmaLink";
 import { ContentCard } from "@/components/ContentCard";
 import { Tabs as DocTabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
-import { TabsDemo } from "@/components/TabsExamples";
-import { BulletList, Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { TabsDemo, TabsPreview } from "@/components/TabsExamples";
+import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { tabsHtml, tabsCss } from "@/data/code/molecules";
 import type { ComponentDoc } from "@/data/components";
 import { tabsAccessibility, tabsDefinition, tabsFocusNote, tabsReactUsage, tabsSpecs, tabsStates, tabsUsage } from "@/data/tabs";
 
@@ -36,15 +37,23 @@ export function TabsDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Con teclado: Tab para entrar, flechas para cambiar de pestaña, Tab de nuevo para ir al contenido.">
+                  {/* Vista estática (inert): los controles no se repiten en el orden de Tab; se usan en Pruébalo. */}
+                  <DocSection title="Componente" description="Pestaña seleccionada y pestañas por defecto.">
+                    <div inert className="overflow-x-auto rounded-xl bg-zinc-50 p-6">
+                      <div className="rounded-lg bg-white p-4">
+                        <TabsPreview />
+                      </div>
+                    </div>
+                  </DocSection>
+                  <DocSection title="Estados" level={3}>
+                    <InfoTable columns={["State en Figma", "Cuándo"]} rows={tabsStates.map((row) => [row.figma, row.when])} />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Con teclado: Tab para entrar, flechas para cambiar de pestaña, Tab de nuevo para ir al contenido.">
                     <div className="rounded-xl bg-zinc-50 p-6">
                       <div className="rounded-lg bg-white p-4">
                         <TabsDemo />
                       </div>
                     </div>
-                  </DocSection>
-                  <DocSection title="Estados" className="" level={3}>
-                    <InfoTable columns={["State en Figma", "Cuándo"]} rows={tabsStates.map((row) => [row.figma, row.when])} />
                   </DocSection>
                 </>
               ),
@@ -74,9 +83,12 @@ export function TabsDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={tabsReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={tabsHtml} css={tabsCss} />
+                </>
               ),
             },
           ]}

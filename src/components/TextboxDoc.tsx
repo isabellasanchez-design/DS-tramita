@@ -15,7 +15,9 @@ import {
   InfoTable,
   MarkerBadge,
   SpecsBlock,
+  HtmlCssSections,
 } from "@/components/doc/DocBlocks";
+import { textboxHtml, textboxCss } from "@/data/code/molecules";
 import type { ComponentDoc } from "@/data/components";
 import {
   textboxAccessibility,
@@ -182,13 +184,16 @@ export function TextboxDoc({
             {
               label: "Code",
               content: (
+                <>
                 <DocSection
                   title="React"
-                  className=""
+                  
                   description="Input cubre Text field, Date y Password; Select cubre Dropdown. Ambos aceptan todos los atributos nativos."
                 >
                   <ReactCodeBlock code={textboxReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={textboxHtml} css={textboxCss} />
+                </>
               ),
             },
           ]}

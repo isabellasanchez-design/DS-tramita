@@ -119,12 +119,13 @@ export function Uploader({
     return (
       <div ref={rootRef} {...trackFocus} className={shell}>
         <div
-          className={`flex items-center gap-4 rounded-[4px] border border-dashed border-[#c5c1d1] bg-[#f3f4f9] p-4 has-[:focus-visible]:[outline-style:auto] ${
+          className={`flex items-center rounded-[4px] border border-dashed border-[#c5c1d1] bg-[#f3f4f9] has-[:focus-visible]:[outline-style:auto] ${
             dragging ? "border-[#2a32a2]" : ""
           }`}
         >
           {/* El input está oculto: Figma no define foco, así que la zona muestra el
-              anillo por defecto del navegador cuando el input tiene el foco. */}
+              anillo por defecto del navegador cuando el input tiene el foco. El
+              padding va en el label para que toda la zona punteada abra el selector. */}
           <label
             htmlFor={id}
             onDragOver={(event) => {
@@ -133,7 +134,7 @@ export function Uploader({
             }}
             onDragLeave={() => setDragging(false)}
             onDrop={onDrop}
-            className="flex min-w-0 flex-1 cursor-pointer items-center gap-3"
+            className="flex min-w-0 flex-1 cursor-pointer items-center gap-3 self-stretch p-4"
           >
             <span aria-hidden className="flex size-10 shrink-0 items-center justify-center rounded-[4px] bg-[#e4e5f4] p-1 text-[#2a32a2]">
               <FileTextIcon weight="duotone" className="size-8" />
@@ -153,7 +154,11 @@ export function Uploader({
               className="sr-only"
             />
           </label>
-          {onRemove ? <Action label="Eliminar adjunto" icon={<TrashIcon weight="regular" />} onClick={onRemove} /> : null}
+          {onRemove ? (
+            <span className="pr-4">
+              <Action label="Eliminar adjunto" icon={<TrashIcon weight="regular" />} onClick={onRemove} />
+            </span>
+          ) : null}
         </div>
       </div>
     );

@@ -38,3 +38,8 @@ export function MenuDemo() {
     </div>
   );
 }
+
+/** Vista del componente: abierta y cerrada. */
+export function MenuPreview() {
+  return <MenuDemo />;
+}

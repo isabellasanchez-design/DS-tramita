@@ -3,8 +3,9 @@ import { FigmaLink } from "@/components/FigmaLink";
 import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
-import { ComunicacionesDemo } from "@/components/ComunicacionesExamples";
-import { BulletList, Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { ComunicacionesDemo, ComunicacionesPreview } from "@/components/ComunicacionesExamples";
+import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { comunicacionesHtml, comunicacionesCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import {
   comunicacionesAccessibility,
@@ -37,18 +38,24 @@ export function ComunicacionesDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Escribe el asunto y el contenido, usa la barra o inserta una variable: la vista previa se actualiza.">
-                    <div className="rounded-xl bg-zinc-50 p-6">
-                      <ComunicacionesDemo />
+                  {/* Vista estática (inert): los controles no se repiten en el orden de Tab; se usan en Pruébalo. */}
+                  <DocSection title="Componente" description="Redacción del correo y su vista previa.">
+                    <div inert className="overflow-x-auto rounded-xl bg-zinc-50 p-6">
+                      <ComunicacionesPreview />
                     </div>
-                    <Callout>{comunicacionesNote}</Callout>
                   </DocSection>
-                  <DocSection title="Piezas" className="" level={3}>
+                  <DocSection title="Piezas" level={3}>
                     <InfoTable
                       columns={["Figma", "Código", "Qué es"]}
                       minWidth={640}
                       rows={comunicacionesParts.map((row) => [row.name, <code key="c" className="font-mono text-xs">{row.component}</code>, row.detail])}
                     />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Escribe el asunto y el contenido, usa la barra o inserta una variable: la vista previa se actualiza.">
+                    <div className="rounded-xl bg-zinc-50 p-6">
+                      <ComunicacionesDemo />
+                    </div>
+                    <Callout>{comunicacionesNote}</Callout>
                   </DocSection>
                 </>
               ),
@@ -77,9 +84,12 @@ export function ComunicacionesDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={comunicacionesReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={comunicacionesHtml} css={comunicacionesCss} />
+                </>
               ),
             },
           ]}

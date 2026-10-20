@@ -3,8 +3,9 @@ import { FigmaLink } from "@/components/FigmaLink";
 import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
-import { MenuDemo } from "@/components/MenuExamples";
-import { BulletList, Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { MenuDemo, MenuPreview } from "@/components/MenuExamples";
+import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { menuHtml, menuCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import { menuAccessibility, menuDefinition, menuNote, menuReactUsage, menuSpecs, menuStateInfo, menuUsage } from "@/data/menu";
 
@@ -36,13 +37,19 @@ export function MenuDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Abierta y cerrada. El botón circular del borde la abre y la cierra.">
+                  {/* Vista estática (inert): los controles no se repiten en el orden de Tab; se usan en Pruébalo. */}
+                  <DocSection title="Componente" description="Abierta y cerrada, con la página actual marcada.">
+                    <div inert className="overflow-x-auto rounded-xl bg-zinc-50 p-6">
+                      <MenuPreview />
+                    </div>
+                  </DocSection>
+                  <DocSection title="Estados" level={3}>
+                    <InfoTable columns={["Estado", "Cómo se ve"]} rows={menuStateInfo.map((row) => [row.status, row.visual])} />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Abierta y cerrada. El botón circular del borde la abre y la cierra.">
                     <div className="rounded-xl bg-zinc-50 p-6">
                       <MenuDemo />
                     </div>
-                  </DocSection>
-                  <DocSection title="Estados" className="" level={3}>
-                    <InfoTable columns={["Estado", "Cómo se ve"]} rows={menuStateInfo.map((row) => [row.status, row.visual])} />
                   </DocSection>
                 </>
               ),
@@ -72,9 +79,12 @@ export function MenuDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={menuReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={menuHtml} css={menuCss} />
+                </>
               ),
             },
           ]}

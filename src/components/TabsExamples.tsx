@@ -17,3 +17,8 @@ export function TabsDemo() {
     </Tabs>
   );
 }
+
+/** Vista del componente. */
+export function TabsPreview() {
+  return <TabsDemo />;
+}

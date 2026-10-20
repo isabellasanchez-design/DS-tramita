@@ -6,7 +6,8 @@ import { ReactCodeBlock } from "@/components/CodeBlock";
 import { BarListCard } from "@/components/ui/BarListCard";
 import { KpiCard } from "@/components/ui/KpiCard";
 import { ProgressBar } from "@/components/ui/ProgressBar";
-import { BulletList, Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { indicatorsHtml, indicatorsCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import {
   indicatorsAccessibility,
@@ -113,9 +114,12 @@ export function IndicatorsDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={indicatorsReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={indicatorsHtml} css={indicatorsCss} />
+                </>
               ),
             },
           ]}

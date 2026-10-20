@@ -3,8 +3,9 @@ import { FigmaLink } from "@/components/FigmaLink";
 import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
-import { TreeDemo } from "@/components/TreeExamples";
-import { BulletList, Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { TreeDemo, TreePreview } from "@/components/TreeExamples";
+import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { treeHtml, treeCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import { treeAccessibility, treeDefinition, treeLevels, treeNote, treeReactUsage, treeSpecs, treeUsage } from "@/data/tree";
 
@@ -29,14 +30,20 @@ export function TreeDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Con clic o con teclado: Tab para entrar y flechas para recorrer y abrir.">
+                  {/* Vista estática (inert): los controles no se repiten en el orden de Tab; se usan en Pruébalo. */}
+                  <DocSection title="Componente" description="Los cuatro niveles, abiertos.">
+                    <div inert className="overflow-x-auto rounded-xl bg-zinc-50 p-6">
+                      <TreePreview />
+                    </div>
+                  </DocSection>
+                  <DocSection title="Niveles" level={3}>
+                    <InfoTable columns={["Figma", "Ícono", "Sangría", "Fondo"]} minWidth={560} rows={treeLevels.map((row) => [row.figma, row.icon, row.indent, row.bg])} />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Con clic o con teclado: Tab para entrar y flechas para recorrer y abrir.">
                     <div className="rounded-xl bg-zinc-50 p-6">
                       <TreeDemo />
                     </div>
                     <Callout>{treeNote}</Callout>
-                  </DocSection>
-                  <DocSection title="Niveles" className="" level={3}>
-                    <InfoTable columns={["Figma", "Ícono", "Sangría", "Fondo"]} minWidth={560} rows={treeLevels.map((row) => [row.figma, row.icon, row.indent, row.bg])} />
                   </DocSection>
                 </>
               ),
@@ -65,9 +72,12 @@ export function TreeDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={treeReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={treeHtml} css={treeCss} />
+                </>
               ),
             },
           ]}

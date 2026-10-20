@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { CssCodeBlock, HtmlCodeBlock } from "@/components/CodeBlock";
+import { parseCss } from "@/lib/css";
 
 // Bloques compartidos por las páginas de documentación de componentes.
 
@@ -198,5 +200,22 @@ export function MarkerBadge({ n }: { n: number }) {
     <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-[#c54600] text-[11px] font-bold text-white">
       {n}
     </span>
+  );
+}
+
+/** Secciones HTML y CSS de la pestaña Code, para equipos que no usan React. */
+export function HtmlCssSections({ html, css, intro }: { html: string; css: string; intro?: ReactNode }) {
+  return (
+    <>
+      <DocSection
+        title="HTML"
+        description={intro ?? "Estructura semántica de referencia, para equipos que no usan el componente React."}
+      >
+        <HtmlCodeBlock code={html} />
+      </DocSection>
+      <DocSection title="CSS" className="" description="Estilos con los valores de Figma.">
+        <CssCodeBlock rules={parseCss(css)} />
+      </DocSection>
+    </>
   );
 }

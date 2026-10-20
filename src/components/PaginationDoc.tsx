@@ -4,7 +4,8 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { PaginationDemo, PaginationStates } from "@/components/PaginationExamples";
-import { BulletList, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { paginationHtml, paginationCss } from "@/data/code/molecules";
 import type { ComponentDoc } from "@/data/components";
 import {
   paginationAccessibility,
@@ -81,9 +82,12 @@ export function PaginationDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={paginationReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={paginationHtml} css={paginationCss} />
+                </>
               ),
             },
           ]}

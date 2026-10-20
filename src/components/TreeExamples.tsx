@@ -41,3 +41,8 @@ const plan: TreeItem[] = [
 export function TreeDemo() {
   return <TreeView aria-label="Plan de desarrollo" items={plan} defaultExpanded={["ap-01", "ej-01"]} />;
 }
+
+/** Vista del componente: todos los niveles abiertos. */
+export function TreePreview() {
+  return <TreeView aria-label="Plan de desarrollo" items={plan} defaultExpanded={["ap-01", "ej-01", "ip-01", "ap-02"]} />;
+}

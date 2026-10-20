@@ -3,8 +3,9 @@ import { FigmaLink } from "@/components/FigmaLink";
 import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
-import { DropdownMultiple, DropdownSingle } from "@/components/DropdownExamples";
-import { BulletList, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { DropdownMultiple, DropdownSingle, DropdownPreview } from "@/components/DropdownExamples";
+import { BulletList, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { dropdownHtml, dropdownCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import { dropdownAccessibility, dropdownDefinition, dropdownReactUsage, dropdownSpecs, dropdownStateInfo, dropdownUsage } from "@/data/dropdown";
 
@@ -36,14 +37,20 @@ export function DropdownDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Ábrelo con clic o con flechas; Enter elige, Escape cierra. Escribe una letra para saltar a una opción.">
+                  {/* Vista estática (inert): los controles no se repiten en el orden de Tab; se usan en Pruébalo. */}
+                  <DocSection title="Componente" description="Vacío, con una opción elegida y con selección múltiple.">
+                    <div inert className="overflow-x-auto rounded-xl bg-zinc-50 p-6">
+                      <DropdownPreview />
+                    </div>
+                  </DocSection>
+                  <DocSection title="Estados de una opción" level={3}>
+                    <InfoTable columns={["Estado", "Cómo se ve"]} rows={dropdownStateInfo.map((row) => [row.status, row.visual])} />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Ábrelo con clic o con flechas; Enter elige, Escape cierra. Escribe una letra para saltar a una opción.">
                     <div className="grid min-h-[420px] grid-cols-1 items-start gap-6 rounded-xl bg-zinc-50 p-6 md:grid-cols-2">
                       <DropdownSingle />
                       <DropdownMultiple />
                     </div>
-                  </DocSection>
-                  <DocSection title="Estados de una opción" className="" level={3}>
-                    <InfoTable columns={["Estado", "Cómo se ve"]} rows={dropdownStateInfo.map((row) => [row.status, row.visual])} />
                   </DocSection>
                 </>
               ),
@@ -72,9 +79,12 @@ export function DropdownDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={dropdownReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={dropdownHtml} css={dropdownCss} />
+                </>
               ),
             },
           ]}

@@ -4,7 +4,8 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { PopupDemo, PopupGallery } from "@/components/PopupExamples";
-import { BulletList, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { popupHtml, popupCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
 import { popupAccessibility, popupCaseInfo, popupDefinition, popupReactUsage, popupSpecs, popupUsage } from "@/data/popup";
 
@@ -36,18 +37,18 @@ export function PopupDoc({
               label: "Resumen",
               content: (
                 <>
-                  <DocSection title="Pruébalo" description="Ábrelo y prueba con teclado: el foco queda dentro, Escape cierra y el foco vuelve al botón.">
-                    <div className="rounded-xl bg-zinc-50 p-6">
-                      <PopupDemo />
-                    </div>
-                  </DocSection>
                   <DocSection title="Variantes" description="Case, orientación y Con marca, mostrados dentro de la página.">
                     <div className="overflow-x-auto rounded-xl bg-zinc-50 p-6">
                       <PopupGallery />
                     </div>
                   </DocSection>
-                  <DocSection title="Cuándo usar cada caso" className="" level={3}>
+                  <DocSection title="Cuándo usar cada caso" level={3}>
                     <InfoTable columns={["Case", "Cuándo usarlo"]} rows={popupCaseInfo.map((row) => [row.tone, row.when])} />
+                  </DocSection>
+                  <DocSection title="Pruébalo" className="" description="Ábrelo y prueba con teclado: el foco queda dentro, Escape cierra y el foco vuelve al botón.">
+                    <div className="rounded-xl bg-zinc-50 p-6">
+                      <PopupDemo />
+                    </div>
                   </DocSection>
                 </>
               ),
@@ -76,9 +77,12 @@ export function PopupDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={popupReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={popupHtml} css={popupCss} />
+                </>
               ),
             },
           ]}

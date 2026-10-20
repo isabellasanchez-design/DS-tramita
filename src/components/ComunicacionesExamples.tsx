@@ -47,3 +47,8 @@ export function ComunicacionesDemo() {
     </div>
   );
 }
+
+/** Vista del componente. */
+export function ComunicacionesPreview() {
+  return <ComunicacionesDemo />;
+}
