@@ -9,6 +9,7 @@ import { Alert } from "@/components/ui/Alert";
 import { InformationBar } from "@/components/ui/InformationBar";
 import { Stepper } from "@/components/ui/Stepper";
 import { ActivityTimeline, ActivityTimelineItem } from "@/components/ui/ActivityTimeline";
+import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Tag } from "@/components/ui/Tag";
 import { TooltipBubble } from "@/components/ui/Tooltip";
 import { getButtonStyle } from "@/data/buttons";
@@ -176,6 +177,16 @@ const previews: Record<string, () => ReactNode> = {
         <span className="text-[11px] font-bold text-[#2a32a2]">Recordatorio de renovación</span>
       </div>
       <div className="border border-[#d8d9de] bg-white px-3 py-3 text-[9px] leading-tight text-[#484956]">Estimado(a) María Rojas, le recordamos…</div>
+    </div>
+  ),
+  indicadores: () => (
+    <div className="flex w-[220px] flex-col gap-2 rounded-[10px] border border-[#d8d9de] bg-white p-3 text-left text-[10px] font-bold text-[#484956]">
+      {[["Alojamiento", 100], ["Agencias", 55], ["Transporte", 45]].map(([label, value]) => (
+        <span key={label} className="flex items-center gap-2">
+          <span className="w-16">{label}</span>
+          <ProgressBar value={Number(value)} className="flex-1" />
+        </span>
+      ))}
     </div>
   ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,

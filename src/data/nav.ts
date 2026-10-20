@@ -86,6 +86,7 @@ export const navCategories: NavCategory[] = [
       { slug: "expandable-tree", label: "Expandable tree item" },
       { slug: "activity-timeline", label: "Activity Timeline" },
       { slug: "comunicaciones", label: "Comunicaciones" },
+      { slug: "indicadores", label: "Indicators and graph" },
       { slug: "modales", label: "Popup" },
       { slug: "tablas", label: "Tablas" },
     ],

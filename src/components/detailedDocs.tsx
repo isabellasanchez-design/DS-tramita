@@ -18,6 +18,7 @@ import { UploaderDoc } from "@/components/UploaderDoc";
 import { TreeDoc } from "@/components/TreeDoc";
 import { TimelineDoc } from "@/components/TimelineDoc";
 import { ComunicacionesDoc } from "@/components/ComunicacionesDoc";
+import { IndicatorsDoc } from "@/components/IndicatorsDoc";
 import type { ComponentDoc } from "@/data/components";
 
 // Componentes con documentación completa (por slug de components.ts); el resto
@@ -43,6 +44,7 @@ export const detailedDocs = {
   "expandable-tree": TreeDoc,
   "activity-timeline": TimelineDoc,
   comunicaciones: ComunicacionesDoc,
+  indicadores: IndicatorsDoc,
 } as const;
 
 type DocProps = { component: ComponentDoc; eyebrow: string; eyebrowHref: string; docPath: string };

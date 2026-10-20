@@ -132,5 +132,15 @@ export const docSources: Record<string, string[]> = {
     "src/figma/ComposeEmail.figma.ts",
     "src/figma/EmailPreview.figma.ts",
   ],
+  "/componentes/indicadores": [
+    "src/data/indicators.ts",
+    "src/components/IndicatorsDoc.tsx",
+    "src/components/ui/KpiCard.tsx",
+    "src/components/ui/BarListCard.tsx",
+    "src/components/ui/ProgressBar.tsx",
+    "src/figma/KpiCard.figma.ts",
+    "src/figma/BarListCard.figma.ts",
+    "src/figma/ProgressBar.figma.ts",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };

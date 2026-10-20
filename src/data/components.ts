@@ -10,6 +10,13 @@ export type ComponentDoc = {
 
 export const components: ComponentDoc[] = [
   {
+    slug: "indicadores",
+    name: "Indicators and graph",
+    summary: "KPI Card, Bar List Card y Progress bar para tableros de seguimiento.",
+    figmaNodeId: "1325:7969",
+    detailed: true,
+  },
+  {
     slug: "comunicaciones",
     name: "Comunicaciones",
     summary: "Redactar y previsualizar comunicaciones masivas, con editor de texto y variables.",
@@ -238,6 +245,7 @@ export const componentGroups: Record<string, string[]> = {
   "expandable-tree": ["expandable-tree"],
   "activity-timeline": ["activity-timeline"],
   comunicaciones: ["comunicaciones"],
+  indicadores: ["indicadores"],
 };
 
 export function findComponent(slug: string) {
