@@ -22,3 +22,8 @@ export function StepperDemo() {
     </div>
   );
 }
+
+/** Vista del componente: un paso de cada estado. */
+export function StepperPreview() {
+  return <Stepper steps={steps} current={1} />;
+}

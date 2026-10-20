@@ -27,3 +27,26 @@ export function DropdownMultiple() {
     </Dropdown>
   );
 }
+
+/** Vista del componente: campo vacío, con una opción y con varias. */
+export function DropdownPreview() {
+  return (
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <Dropdown label="Ciudad del trámite" placeholder="Selecciona una ciudad" showRadio>
+        {ciudades.map((ciudad) => (
+          <DropdownOption key={ciudad} value={ciudad}>
+            {ciudad}
+          </DropdownOption>
+        ))}
+      </Dropdown>
+      <Dropdown label="Ciudad del trámite" defaultValue="Medellín" showRadio>
+        {ciudades.map((ciudad) => (
+          <DropdownOption key={ciudad} value={ciudad}>
+            {ciudad}
+          </DropdownOption>
+        ))}
+      </Dropdown>
+      <DropdownMultiple />
+    </div>
+  );
+}

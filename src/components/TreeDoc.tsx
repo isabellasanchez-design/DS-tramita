@@ -3,7 +3,7 @@ import { FigmaLink } from "@/components/FigmaLink";
 import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
-import { TreeDemo } from "@/components/TreeExamples";
+import { TreeDemo, TreePreview } from "@/components/TreeExamples";
 import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
 import { treeHtml, treeCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
@@ -30,6 +30,12 @@ export function TreeDoc({
               label: "Resumen",
               content: (
                 <>
+                  {/* Vista estática (inert): los controles no se repiten en el orden de Tab; se usan en Pruébalo. */}
+                  <DocSection title="Componente" description="Los cuatro niveles, abiertos.">
+                    <div inert className="overflow-x-auto rounded-xl bg-zinc-50 p-6">
+                      <TreePreview />
+                    </div>
+                  </DocSection>
                   <DocSection title="Niveles" level={3}>
                     <InfoTable columns={["Figma", "Ícono", "Sangría", "Fondo"]} minWidth={560} rows={treeLevels.map((row) => [row.figma, row.icon, row.indent, row.bg])} />
                   </DocSection>

@@ -3,7 +3,7 @@ import { FigmaLink } from "@/components/FigmaLink";
 import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
-import { StepperDemo } from "@/components/StepperExamples";
+import { StepperDemo, StepperPreview } from "@/components/StepperExamples";
 import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
 import { stepperHtml, stepperCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
@@ -30,6 +30,14 @@ export function StepperDoc({
               label: "Resumen",
               content: (
                 <>
+                  {/* Vista estática (inert): los controles no se repiten en el orden de Tab; se usan en Pruébalo. */}
+                  <DocSection title="Componente" description="Un paso completado, el actual y los pendientes.">
+                    <div inert className="overflow-x-auto rounded-xl bg-zinc-50 p-6">
+                      <div className="rounded-lg bg-white p-6">
+                        <StepperPreview />
+                      </div>
+                    </div>
+                  </DocSection>
                   <DocSection title="Estados de un paso" level={3}>
                     <InfoTable columns={["Figma", "Significa", "Cómo se ve"]} minWidth={560} rows={stepperStates.map((row) => [row.figma, row.meaning, row.visual])} />
                   </DocSection>

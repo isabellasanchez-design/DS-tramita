@@ -3,7 +3,7 @@ import { FigmaLink } from "@/components/FigmaLink";
 import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
-import { DropdownMultiple, DropdownSingle } from "@/components/DropdownExamples";
+import { DropdownMultiple, DropdownSingle, DropdownPreview } from "@/components/DropdownExamples";
 import { BulletList, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
 import { dropdownHtml, dropdownCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
@@ -37,6 +37,12 @@ export function DropdownDoc({
               label: "Resumen",
               content: (
                 <>
+                  {/* Vista estática (inert): los controles no se repiten en el orden de Tab; se usan en Pruébalo. */}
+                  <DocSection title="Componente" description="Vacío, con una opción elegida y con selección múltiple.">
+                    <div inert className="overflow-x-auto rounded-xl bg-zinc-50 p-6">
+                      <DropdownPreview />
+                    </div>
+                  </DocSection>
                   <DocSection title="Estados de una opción" level={3}>
                     <InfoTable columns={["Estado", "Cómo se ve"]} rows={dropdownStateInfo.map((row) => [row.status, row.visual])} />
                   </DocSection>

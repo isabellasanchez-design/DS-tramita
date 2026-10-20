@@ -3,7 +3,7 @@ import { FigmaLink } from "@/components/FigmaLink";
 import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
-import { ComunicacionesDemo } from "@/components/ComunicacionesExamples";
+import { ComunicacionesDemo, ComunicacionesPreview } from "@/components/ComunicacionesExamples";
 import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
 import { comunicacionesHtml, comunicacionesCss } from "@/data/code/organisms";
 import type { ComponentDoc } from "@/data/components";
@@ -38,6 +38,12 @@ export function ComunicacionesDoc({
               label: "Resumen",
               content: (
                 <>
+                  {/* Vista estática (inert): los controles no se repiten en el orden de Tab; se usan en Pruébalo. */}
+                  <DocSection title="Componente" description="Redacción del correo y su vista previa.">
+                    <div inert className="overflow-x-auto rounded-xl bg-zinc-50 p-6">
+                      <ComunicacionesPreview />
+                    </div>
+                  </DocSection>
                   <DocSection title="Piezas" level={3}>
                     <InfoTable
                       columns={["Figma", "Código", "Qué es"]}

@@ -3,7 +3,7 @@ import { FigmaLink } from "@/components/FigmaLink";
 import { ContentCard } from "@/components/ContentCard";
 import { Tabs as DocTabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
-import { TabsDemo } from "@/components/TabsExamples";
+import { TabsDemo, TabsPreview } from "@/components/TabsExamples";
 import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
 import { tabsHtml, tabsCss } from "@/data/code/molecules";
 import type { ComponentDoc } from "@/data/components";
@@ -37,6 +37,14 @@ export function TabsDoc({
               label: "Resumen",
               content: (
                 <>
+                  {/* Vista estática (inert): los controles no se repiten en el orden de Tab; se usan en Pruébalo. */}
+                  <DocSection title="Componente" description="Pestaña seleccionada y pestañas por defecto.">
+                    <div inert className="overflow-x-auto rounded-xl bg-zinc-50 p-6">
+                      <div className="rounded-lg bg-white p-4">
+                        <TabsPreview />
+                      </div>
+                    </div>
+                  </DocSection>
                   <DocSection title="Estados" level={3}>
                     <InfoTable columns={["State en Figma", "Cuándo"]} rows={tabsStates.map((row) => [row.figma, row.when])} />
                   </DocSection>
