@@ -14,7 +14,9 @@ import {
   InfoTable,
   MarkerBadge,
   SpecsBlock,
+  HtmlCssSections,
 } from "@/components/doc/DocBlocks";
+import { tooltipHtml, tooltipCss } from "@/data/code/molecules";
 import type { ComponentDoc } from "@/data/components";
 import {
   tooltipAccessibility,
@@ -146,9 +148,12 @@ export function TooltipDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="" description="Envuelve el elemento que activa el tooltip.">
+                <>
+                <DocSection title="React"  description="Envuelve el elemento que activa el tooltip.">
                   <ReactCodeBlock code={tooltipReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={tooltipHtml} css={tooltipCss} />
+                </>
               ),
             },
           ]}

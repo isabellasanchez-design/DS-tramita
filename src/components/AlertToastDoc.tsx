@@ -5,7 +5,8 @@ import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { AlertToastDemo } from "@/components/AlertToastDemo";
 import { AlertActionsExamples, AlertAnatomySample, AlertToneGrid, ToastExamples } from "@/components/AlertToastExamples";
-import { AnatomyBlock, BulletList, Callout, DocSection, InfoTable, MarkerBadge, SpecsBlock } from "@/components/doc/DocBlocks";
+import { AnatomyBlock, BulletList, Callout, DocSection, InfoTable, MarkerBadge, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { alertHtml, alertCss } from "@/data/code/molecules";
 import type { ComponentDoc } from "@/data/components";
 import {
   alertAccessibility,
@@ -113,9 +114,12 @@ export function AlertToastDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="" description="Alert y Toast comparten los casos y estilos.">
+                <>
+                <DocSection title="React"  description="Alert y Toast comparten los casos y estilos.">
                   <ReactCodeBlock code={alertReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={alertHtml} css={alertCss} />
+                </>
               ),
             },
           ]}

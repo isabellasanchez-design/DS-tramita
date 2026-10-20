@@ -4,7 +4,8 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs as DocTabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { TabsDemo } from "@/components/TabsExamples";
-import { BulletList, Callout, DocSection, InfoTable, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, Callout, DocSection, InfoTable, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { tabsHtml, tabsCss } from "@/data/code/molecules";
 import type { ComponentDoc } from "@/data/components";
 import { tabsAccessibility, tabsDefinition, tabsFocusNote, tabsReactUsage, tabsSpecs, tabsStates, tabsUsage } from "@/data/tabs";
 
@@ -74,9 +75,12 @@ export function TabsDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={tabsReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={tabsHtml} css={tabsCss} />
+                </>
               ),
             },
           ]}

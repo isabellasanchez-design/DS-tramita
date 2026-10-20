@@ -15,7 +15,8 @@ import { ButtonSizePreview } from "@/components/ButtonSizePreview";
 import { ButtonSizeSpecCard } from "@/components/ButtonSizeSpecCard";
 import { ButtonCodeBlock } from "@/components/ButtonCodeBlock";
 import { ButtonDemo } from "@/components/ButtonDemo";
-import { ReactCodeBlock } from "@/components/CodeBlock";
+import { HtmlCodeBlock, ReactCodeBlock } from "@/components/CodeBlock";
+import { buttonHtml } from "@/data/code/molecules";
 import { Callout } from "@/components/doc/DocBlocks";
 import { findComponent, componentGroups } from "@/data/components";
 import {
@@ -307,6 +308,15 @@ export default async function ComponenteCategoryPage(props: PageProps<"/componen
                         <ButtonDemo />
                       </div>
                       <ReactCodeBlock code={buttonReactUsage} />
+                    </section>
+
+                    <section className="mb-8">
+                      <h2 className="mb-1 text-lg font-semibold text-zinc-900">HTML</h2>
+                      <p className="mb-4 text-sm text-zinc-600">
+                        Estructura de referencia para equipos que no usan el componente React. Los
+                        estilos de cada tipo están abajo.
+                      </p>
+                      <HtmlCodeBlock code={buttonHtml} />
                     </section>
 
                     <section>

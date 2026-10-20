@@ -4,7 +4,8 @@ import { ContentCard } from "@/components/ContentCard";
 import { Tabs } from "@/components/Tabs";
 import { ReactCodeBlock } from "@/components/CodeBlock";
 import { InformationBarDemo, InformationBarSizes } from "@/components/InformationBarExamples";
-import { BulletList, Callout, DocSection, SpecsBlock } from "@/components/doc/DocBlocks";
+import { BulletList, Callout, DocSection, SpecsBlock, HtmlCssSections } from "@/components/doc/DocBlocks";
+import { informationBarHtml, informationBarCss } from "@/data/code/molecules";
 import type { ComponentDoc } from "@/data/components";
 import {
   informationBarAccessibility,
@@ -79,9 +80,12 @@ export function InformationBarDoc({
             {
               label: "Code",
               content: (
-                <DocSection title="React" className="">
+                <>
+                <DocSection title="React" >
                   <ReactCodeBlock code={informationBarReactUsage} />
                 </DocSection>
+                  <HtmlCssSections html={informationBarHtml} css={informationBarCss} />
+                </>
               ),
             },
           ]}
