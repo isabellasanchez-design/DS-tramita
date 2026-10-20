@@ -10,6 +10,14 @@ export type ComponentDoc = {
 
 export const components: ComponentDoc[] = [
   {
+    slug: "activity-timeline",
+    name: "Activity Timeline",
+    summary: "Historial de eventos de un trámite o una atención, con hora, responsable y descripción.",
+    figmaNodeId: "759:1126",
+    variantAxes: [{ name: "Status", values: ["L", "M", "S", "None"] }],
+    detailed: true,
+  },
+  {
     slug: "expandable-tree",
     name: "Expandable tree item",
     summary: "Lista jerárquica que se abre por niveles, como un plan con ejes, programas e indicadores.",
@@ -221,6 +229,7 @@ export const componentGroups: Record<string, string[]> = {
   stepper: ["stepper"],
   uploader: ["uploader"],
   "expandable-tree": ["expandable-tree"],
+  "activity-timeline": ["activity-timeline"],
 };
 
 export function findComponent(slug: string) {

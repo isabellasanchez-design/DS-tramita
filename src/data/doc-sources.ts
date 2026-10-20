@@ -117,5 +117,11 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/TreeView.tsx",
     "src/figma/TreeItem.figma.ts",
   ],
+  "/componentes/activity-timeline": [
+    "src/data/timeline.ts",
+    "src/components/TimelineDoc.tsx",
+    "src/components/ui/ActivityTimeline.tsx",
+    "src/figma/ActivityTimelineItem.figma.ts",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };

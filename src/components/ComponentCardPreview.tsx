@@ -8,6 +8,7 @@ import { SwitchPreview } from "@/components/SwitchPreview";
 import { Alert } from "@/components/ui/Alert";
 import { InformationBar } from "@/components/ui/InformationBar";
 import { Stepper } from "@/components/ui/Stepper";
+import { ActivityTimeline, ActivityTimelineItem } from "@/components/ui/ActivityTimeline";
 import { Tag } from "@/components/ui/Tag";
 import { TooltipBubble } from "@/components/ui/Tooltip";
 import { getButtonStyle } from "@/data/buttons";
@@ -158,6 +159,14 @@ const previews: Record<string, () => ReactNode> = {
       <span className="bg-white px-2 py-1.5 text-[#202025]"><b className="font-normal text-[#484956]">AP-01</b> Gobernanza</span>
       <span className="bg-[#f6f6f7] py-1.5 pl-6 pr-2 text-[#202025]"><b className="font-normal text-[#484956]">EJ-01</b> Fortalecimiento</span>
       <span className="bg-[#f6f6f7] py-1.5 pl-10 pr-2 text-[#202025]"><b className="font-normal text-[#484956]">IP-01</b> Trámites en línea</span>
+    </div>
+  ),
+  "activity-timeline": () => (
+    <div className="w-[200px] rounded-md bg-white p-2 text-left">
+      <ActivityTimeline aria-label="Ejemplo">
+        <ActivityTimelineItem emphasis="L" title="Trámite cerrado" meta="09:52 AM" />
+        <ActivityTimelineItem emphasis="M" title="Documentos adjuntados" meta="09:48 AM" />
+      </ActivityTimeline>
     </div>
   ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,
