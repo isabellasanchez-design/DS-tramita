@@ -88,7 +88,7 @@ export const navCategories: NavCategory[] = [
       { slug: "comunicaciones", label: "Comunicaciones" },
       { slug: "indicadores", label: "Indicators and graph" },
       { slug: "modales", label: "Popup" },
-      { slug: "tablas", label: "Tablas" },
+      { slug: "tablas", label: "Tabla" },
     ],
   },
 ];

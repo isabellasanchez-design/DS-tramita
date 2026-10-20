@@ -10,6 +10,15 @@ export type ComponentDoc = {
 
 export const components: ComponentDoc[] = [
   {
+    slug: "tabla",
+    name: "Tabla",
+    summary: "Tabla para listar registros, con orden por columna, filtros y acceso al detalle de cada fila.",
+    figmaNodeId: "1167:49040",
+    variantAxes: [{ name: "Caso", values: ["Tramites asignados", "Indicador de resultado"] }],
+    states: ["Default", "Hover"],
+    detailed: true,
+  },
+  {
     slug: "indicadores",
     name: "Indicators and graph",
     summary: "KPI Card, Bar List Card y Progress bar para tableros de seguimiento.",
@@ -246,6 +255,7 @@ export const componentGroups: Record<string, string[]> = {
   "activity-timeline": ["activity-timeline"],
   comunicaciones: ["comunicaciones"],
   indicadores: ["indicadores"],
+  tablas: ["tabla"],
 };
 
 export function findComponent(slug: string) {

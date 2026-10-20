@@ -189,6 +189,14 @@ const previews: Record<string, () => ReactNode> = {
       ))}
     </div>
   ),
+  tabla: () => (
+    <div className="w-[230px] overflow-hidden rounded-[12px] text-left text-[10px]">
+      <div className="flex border-b border-[#d8d9de] bg-[#e4e5f4] px-3 py-2 font-bold text-[#484956]"><span className="flex-1">Radicado</span><span className="flex-1">Estado</span></div>
+      {["TH-000005", "TH-000012"].map((r, i) => (
+        <div key={r} className={`flex border-b border-[#d8d9de] px-3 py-2 text-[#202025] ${i === 1 ? "bg-[#c9ccee]" : "bg-white"}`}><span className="flex-1">{r}</span><span className="flex-1">En revisión</span></div>
+      ))}
+    </div>
+  ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,
 };
 

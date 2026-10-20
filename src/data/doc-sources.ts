@@ -142,5 +142,11 @@ export const docSources: Record<string, string[]> = {
     "src/figma/BarListCard.figma.ts",
     "src/figma/ProgressBar.figma.ts",
   ],
+  "/componentes/tablas": [
+    "src/data/tabla.ts",
+    "src/components/Tabla",
+    "src/components/ui/DataTable.tsx",
+    "src/figma/Tabla",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };
