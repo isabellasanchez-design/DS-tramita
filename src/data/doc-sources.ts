@@ -87,5 +87,11 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/Dropdown.tsx",
     "src/figma/Dropdown",
   ],
+  "/componentes/menu": [
+    "src/data/menu.ts",
+    "src/components/Menu",
+    "src/components/ui/SidebarMenu.tsx",
+    "src/figma/SidebarMenu",
+  ],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };

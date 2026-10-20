@@ -123,6 +123,13 @@ const previews: Record<string, () => ReactNode> = {
       <div className="px-2 py-2 shadow-[inset_0_1px_0_#d8d9de]">Cali</div>
     </div>
   ),
+  menu: () => (
+    <div className="flex h-28 w-[150px] flex-col gap-1 rounded-md bg-[linear-gradient(180deg,#1a1f6b_0%,#2830a6_46%,#2830a6_100%)] p-2 text-left text-[11px] leading-none">
+      <span className="rounded-[6px] bg-[#e4e5f4] px-2 py-1.5 font-bold text-[#2a32a2]">Inicio</span>
+      <span className="px-2 py-1.5 text-white">Servicios</span>
+      <span className="px-2 py-1.5 text-white">Ventanillas</span>
+    </div>
+  ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,
 };
 

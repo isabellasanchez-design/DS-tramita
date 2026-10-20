@@ -11,6 +11,7 @@ import { PaginationDoc } from "@/components/PaginationDoc";
 import { TabsDoc } from "@/components/TabsDoc";
 import { CardDoc } from "@/components/CardDoc";
 import { DropdownDoc } from "@/components/DropdownDoc";
+import { MenuDoc } from "@/components/MenuDoc";
 import type { ComponentDoc } from "@/data/components";
 
 // Componentes con documentación completa (por slug de components.ts); el resto
@@ -29,6 +30,7 @@ export const detailedDocs = {
   tabs: TabsDoc,
   card: CardDoc,
   dropdown: DropdownDoc,
+  menu: MenuDoc,
 } as const;
 
 type DocProps = { component: ComponentDoc; eyebrow: string; eyebrowHref: string; docPath: string };

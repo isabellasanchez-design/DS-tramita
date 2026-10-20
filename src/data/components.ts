@@ -10,6 +10,14 @@ export type ComponentDoc = {
 
 export const components: ComponentDoc[] = [
   {
+    slug: "menu",
+    name: "Menu",
+    summary: "Barra lateral de navegación que se abre o se cierra, con secciones y la página actual marcada.",
+    figmaNodeId: "233:79",
+    variantAxes: [{ name: "State", values: ["Open", "Closed"] }],
+    detailed: true,
+  },
+  {
     slug: "dropdown",
     name: "Dropdown",
     summary: "Lista desplegable para elegir una o varias opciones, con radio, checkbox o ícono.",
@@ -172,6 +180,7 @@ export const componentGroups: Record<string, string[]> = {
   tabs: ["tabs"],
   cards: ["card"],
   dropdown: ["dropdown"],
+  menu: ["menu"],
 };
 
 export function findComponent(slug: string) {
