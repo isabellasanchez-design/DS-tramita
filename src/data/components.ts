@@ -10,6 +10,14 @@ export type ComponentDoc = {
 
 export const components: ComponentDoc[] = [
   {
+    slug: "stepper",
+    name: "Stepper",
+    summary: "Indica en qué paso va la persona dentro de un proceso y cuántos le faltan.",
+    figmaNodeId: "129:335",
+    states: ["Completed", "Current", "Active"],
+    detailed: true,
+  },
+  {
     slug: "popup",
     name: "Popup",
     summary: "Ventana modal para confirmar acciones, mostrar resultados importantes o aceptar términos.",
@@ -194,6 +202,7 @@ export const componentGroups: Record<string, string[]> = {
   dropdown: ["dropdown"],
   menu: ["menu"],
   modales: ["popup"],
+  stepper: ["stepper"],
 };
 
 export function findComponent(slug: string) {

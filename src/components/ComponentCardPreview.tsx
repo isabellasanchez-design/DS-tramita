@@ -7,6 +7,7 @@ import { RadioPreview } from "@/components/RadioPreview";
 import { SwitchPreview } from "@/components/SwitchPreview";
 import { Alert } from "@/components/ui/Alert";
 import { InformationBar } from "@/components/ui/InformationBar";
+import { Stepper } from "@/components/ui/Stepper";
 import { Tag } from "@/components/ui/Tag";
 import { TooltipBubble } from "@/components/ui/Tooltip";
 import { getButtonStyle } from "@/data/buttons";
@@ -136,6 +137,11 @@ const previews: Record<string, () => ReactNode> = {
       <span className="text-xs font-bold text-[#2a32a2]">¿Radicar solicitud?</span>
       <span className="w-full rounded-[10px] bg-[#23297b] py-1 text-center text-[10px] text-white">Radicar</span>
       <span className="w-full rounded-[10px] border border-[#2a32a2] py-1 text-center text-[10px] text-[#2a32a2]">Cancelar</span>
+    </div>
+  ),
+  stepper: () => (
+    <div className="w-full max-w-[280px]">
+      <Stepper steps={["Tipo", "Datos", "Documentos"]} current={1} aria-label="Ejemplo" />
     </div>
   ),
   tooltip: () => <TooltipBubble tipPosition="centerBottom">Texto de ayuda breve</TooltipBubble>,

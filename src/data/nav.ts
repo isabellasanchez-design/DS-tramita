@@ -81,6 +81,7 @@ export const navCategories: NavCategory[] = [
       { slug: "cards", label: "Card" },
       { slug: "dropdown", label: "Dropdown" },
       { slug: "menu", label: "Menu" },
+      { slug: "stepper", label: "Stepper" },
       { slug: "modales", label: "Popup" },
       { slug: "tablas", label: "Tablas" },
     ],
