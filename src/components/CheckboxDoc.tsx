@@ -5,7 +5,8 @@ import { Tabs } from "@/components/Tabs";
 import { CheckboxPreview } from "@/components/CheckboxPreview";
 import { CheckboxDemo } from "@/components/CheckboxDemo";
 import { CheckboxAnatomyDiagram, CheckboxSpecsDiagram } from "@/components/CheckboxDiagrams";
-import { CssCodeBlock, HtmlCodeBlock } from "@/components/CodeBlock";
+import { CssCodeBlock, HtmlCodeBlock, ReactCodeBlock } from "@/components/CodeBlock";
+import { checkboxReactUsage } from "@/data/code/react-usage";
 import type { ComponentDoc } from "@/data/components";
 import {
   checkboxTypeNames,
@@ -268,6 +269,13 @@ export function CheckboxDoc({
               label: "Code",
               content: (
                 <>
+                  <section className="mb-8">
+                    <h2 className="mb-1 text-lg font-semibold text-zinc-900">React</h2>
+                    <p className="mb-4 text-sm text-zinc-600">
+                      Componente del D.S. sobre el input nativo; acepta todos sus atributos.
+                    </p>
+                    <ReactCodeBlock code={checkboxReactUsage} />
+                  </section>
                   <section className="mb-8">
                     <h2 className="mb-1 text-lg font-semibold text-zinc-900">HTML</h2>
                     <p className="mb-4 text-sm text-zinc-600">
