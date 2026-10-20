@@ -14,7 +14,7 @@ import { ButtonUsageExample } from "@/components/ButtonUsageExamples";
 import { ButtonSizePreview } from "@/components/ButtonSizePreview";
 import { ButtonSizeSpecCard } from "@/components/ButtonSizeSpecCard";
 import { ButtonCodeBlock } from "@/components/ButtonCodeBlock";
-import { ButtonDemo } from "@/components/ButtonDemo";
+import { ButtonDemo, ButtonStatesPlayground } from "@/components/ButtonDemo";
 import { HtmlCodeBlock, ReactCodeBlock } from "@/components/CodeBlock";
 import { buttonHtml } from "@/data/code/molecules";
 import { Callout } from "@/components/doc/DocBlocks";
@@ -191,6 +191,18 @@ export default async function ComponenteCategoryPage(props: PageProps<"/componen
                         </table>
                       </div>
                       <Callout>{buttonFocusNote}</Callout>
+                    </section>
+
+                    <section className="mt-8">
+                      <h2 className="mb-1 text-lg font-semibold text-zinc-900">Pruébalo</h2>
+                      <p className="mb-4 text-sm text-zinc-600">
+                        Pasa el cursor para ver Hover, haz clic para ver Loading, llega con Tab para
+                        ver Focus y usa el switch para ver Disabled. Debajo de cada botón se lee su
+                        estado.
+                      </p>
+                      <div className="rounded-xl bg-zinc-50 p-6">
+                        <ButtonStatesPlayground />
+                      </div>
                     </section>
                   </>
                 ),
