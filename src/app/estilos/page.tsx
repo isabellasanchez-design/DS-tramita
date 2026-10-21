@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/PageHeader";
 import { IndexCard } from "@/components/IndexCard";
+import { styleCardPreview } from "@/components/StyleCardPreview";
 import { getCategory } from "@/data/nav";
 
 export const metadata = { title: "Estilos · D.S. Tramita" };
@@ -18,6 +19,7 @@ export default function EstilosIndexPage() {
             href={`/estilos/${item.slug}`}
             title={item.label}
             description={item.description}
+            preview={styleCardPreview(item.slug)}
           />
         ))}
       </div>

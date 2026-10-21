@@ -55,7 +55,6 @@ export const navCategories: NavCategory[] = [
       { slug: "sombras", label: "Sombras" },
       { slug: "grid", label: "Grid" },
       { slug: "elevacion", label: "Elevación" },
-      { slug: "modos-light-dark", label: "Modos Light/Dark" },
       { slug: "tokens-de-diseno", label: "Tokens de diseño" },
     ],
   },

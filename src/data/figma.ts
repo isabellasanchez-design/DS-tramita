@@ -9,6 +9,8 @@ export function figmaLink(nodeId: string) {
 
 export const figmaPages = {
   color: "9:12",
+  /** Variables de uso (01_Color), donde están los colores Border. */
+  colorUsage: "576:5951",
   typography: "9:9",
   margin: "961:104567",
   buttons: "10:299",

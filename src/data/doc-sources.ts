@@ -148,5 +148,6 @@ export const docSources: Record<string, string[]> = {
     "src/components/ui/DataTable.tsx",
     "src/figma/Tabla",
   ],
+  "/estilos/bordes": ["src/data/borders.ts"],
   "/estilos/espaciado": ["src/data/spacing.ts", "src/components/SpacingLayoutDiagram.tsx"],
 };
